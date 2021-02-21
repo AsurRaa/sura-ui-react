@@ -13,9 +13,9 @@ jobs:
         with:
           node-version: 12
       - name: Install dependencies
-        run: npm install && npm run lerna bootstrap
+        run: npx run lerna bootstrap
       - name: Release
         env:
           GITHUB_TOKEN: ${{ secrets.GH_TOKEN }}
           NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
-        run: npm run lerna publish from-git
+        run: npx run lerna publish from-git
