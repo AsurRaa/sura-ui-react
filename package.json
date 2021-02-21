@@ -1,0 +1,14 @@
+{
+  "name": "sura-ui",
+  "author": "@asurraa",
+  "private": true,
+  "devDependencies": {
+    "lerna": "^3.22.1"
+  },"workspaces": [
+    "packages/*"
+  ],
+  "scripts": {
+    "lerna": "npx lerna",
+    "wizard": "npx lerna-wizard"
+  }
+}
