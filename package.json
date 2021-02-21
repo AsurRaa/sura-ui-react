@@ -9,7 +9,8 @@
   ],
   "scripts": {
     "lerna": "npx lerna",
-    "wizard": "npx lerna-wizard"
+    "wizard": "npx lerna-wizard",
+    "release-gen": "lerna version --conventional-commits --create-release github"
   },
   "publishConfig": {
     "registry":"https://npm.pkg.github.com"
