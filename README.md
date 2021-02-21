@@ -4,9 +4,9 @@
 
 > React Component that use internally [@AsurRaa](https://github.com/asurraa).
 
-| Name  | Description                | Link                                                                              |
-| ----- | -------------------------- | --------------------------------------------------------------------------------- |
-| Table | Table++ built on top antd. | [Link to](https://github.com/AsurRaa/sura-ui-react/tree/main/packages/sura-table) |
+| Name           | Description                 | Link                                                                     |
+| -------------- | --------------------------- | ------------------------------------------------------------------------ |
+| @sura-ui/table | enhanded table on top antd. | [Link to](https://github.com/asurraa/sura-ui/tree/master/packages/table) |
 
 ### Install & Usages
 
