@@ -1,6 +1,7 @@
-on: push:
+on:
+  push:
     tags: "v*"
-name: release package-ci
+name: create releases
 jobs:
 releasing:
     name: run tests and release
