@@ -1,24 +1,47 @@
-on:
-  push:
-    tags: "v*"
-name: create releases
+name: Test and Release
+on: [push]
+
 jobs:
-releasing:
-    name: run tests and release
+test-and-release:
+    name: Run tests and release
     runs-on: ubuntu-18.04
     steps:
-      - name: checkout
-          uses: actions/checkout@v1
-      - name: Setup Node.js
-          uses: actions/setup-node@v1
-          with:
-          node-version: 12
-      - name: install dependencies
-          run: npm ci
-      - name: Run tests
-          run: npm test
-      - name: release
-          env:
-          GITHUB_TOKEN: ${{ secrets.GH_TOKEN }}
-          NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
-          run: npm run semantic-release
+    - name: Checkout
+        uses: actions/checkout@v1
+    - name: Setup Node.js
+        uses: actions/setup-node@v1
+        with:
+        node-version: 12
+    - name: Install dependencies
+        run: npm ci
+    - name: Run tests
+        run: npm test
+    - name: Release
+        env:
+        GITHUB_TOKEN: ${{ secrets.GH_TOKEN }}
+        NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
+        run: npm run semantic-release
+# on:
+#   push:
+#     tags: "v*"
+# name: create releases
+# jobs:
+# releasing:
+#     name: run tests and release
+#     runs-on: ubuntu-18.04
+#     steps:
+#       - name: checkout
+#           uses: actions/checkout@v1
+#       - name: Setup Node.js
+#           uses: actions/setup-node@v1
+#           with:
+#           node-version: 12
+#       - name: install dependencies
+#           run: npm ci
+#       - name: Run tests
+#           run: npm test
+#       - name: release
+#           env:
+#           GITHUB_TOKEN: ${{ secrets.GH_TOKEN }}
+#           NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
+#           run: npm run semantic-release
