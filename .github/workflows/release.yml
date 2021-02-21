@@ -13,7 +13,7 @@ jobs:
         with:
           node-version: 12
       - name: Install dependencies
-        run: npm run lerna bootstrap
+        run: npm install && npm run lerna bootstrap
       - name: Release
         env:
           GITHUB_TOKEN: ${{ secrets.GH_TOKEN }}
