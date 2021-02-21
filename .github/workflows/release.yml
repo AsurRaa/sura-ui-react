@@ -8,14 +8,13 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v1
-          with: 
-            fetch-depth: "0"
-          run: git fetch --depth=1 origin +refs/tags/*:refs/tags/*
       - name: Setup Node.js
         uses: actions/setup-node@v1
         with:
           node-version: 12
+          fetch-depth: "0"
           registry-url: https://registry.npmjs.org/
+        run: git fetch --depth=1 origin +refs/tags/*:refs/tags/*
       - name: Checkout back to master
         run: git checkout master
       - name: Install dependencies
