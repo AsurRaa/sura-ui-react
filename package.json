@@ -10,7 +10,8 @@
   "scripts": {
     "lerna": "lerna",
     "wizard": "lerna-wizard",
-    "release-gen": "lerna version --conventional-commits --create-release github"
+    "release-gen": "lerna version --conventional-commits --create-release github",
+    "git": "sh scripts/git_script.sh"
   },
   "publishConfig": {
     "registry":"https://npm.pkg.github.com"
