@@ -19,15 +19,15 @@
 10 silly isBehindUpstream master is behind origin/master by 0 commit(s) and ahead by 0
 11 silly hasTags
 12 verbose hasTags true
-13 silly git-describe.sync "@asurraa/sura-ui-table@0.0.8-4-g406907c" => {"lastTagName":"@asurraa/sura-ui-table@0.0.8","lastVersion":"0.0.8","refCount":"4","sha":"406907c","isDirty":false}
-14 info Looking for changed packages since @asurraa/sura-ui-table@0.0.8
+13 silly git-describe.sync "@asurraa/sura-ui-table@0.0.9-17-gfa07494" => {"lastTagName":"@asurraa/sura-ui-table@0.0.9","lastVersion":"0.0.9","refCount":"17","sha":"fa07494","isDirty":false}
+14 info Looking for changed packages since @asurraa/sura-ui-table@0.0.9
 15 info ignoring diff in paths matching [ 'ignored-file', '*.md' ]
 16 silly checking diff packages/table
-17 silly found diff in packages/table/package.json
-18 verbose filtered diff [ 'packages/table/package.json' ]
+17 silly found diff in packages/table/src/index.tsx
+18 verbose filtered diff [ 'packages/table/src/index.tsx' ]
 19 verbose updated @asurraa/sura-ui-table
-20 verbose git-describe undefined => "@asurraa/sura-ui-table@0.0.8-4-g406907c"
-21 silly git-describe parsed => {"lastTagName":"@asurraa/sura-ui-table@0.0.8","lastVersion":"0.0.8","refCount":"4","sha":"406907c","isDirty":false}
+20 verbose git-describe undefined => "@asurraa/sura-ui-table@0.0.9-17-gfa07494"
+21 silly git-describe parsed => {"lastTagName":"@asurraa/sura-ui-table@0.0.9","lastVersion":"0.0.9","refCount":"17","sha":"fa07494","isDirty":false}
 22 silly independent for @asurraa/sura-ui-table at /Users/lyhourchhen/Developments/sura-ui/packages/table
 23 verbose getChangelogConfig using preset "conventional-changelog-angular"
 24 silly npa Result {
@@ -47,30 +47,30 @@
 24 silly npa }
 25 verbose getChangelogConfig Attempting to resolve preset "conventional-changelog-angular"
 26 info getChangelogConfig Successfully resolved preset "conventional-changelog-angular"
-27 verbose independent increment 0.0.8 by patch
+27 verbose independent increment 0.0.9 by patch
 28 info execute Creating releases...
 29 silly lifecycle No script for "preversion" in "sura-ui", continuing
 30 silly lifecycle No script for "preversion" in "@asurraa/sura-ui-table", continuing
 31 silly lifecycle No script for "version" in "@asurraa/sura-ui-table", continuing
 32 silly independent for @asurraa/sura-ui-table at /Users/lyhourchhen/Developments/sura-ui/packages/table
-33 silly independent writing new entry: "## [0.0.9](https://github.com/asurraa/sura-ui/table/compare/@asurraa/sura-ui-table@0.0.8...@asurraa/sura-ui-table@0.0.9) (2021-02-21)\n\n**Note:** Version bump only for package @asurraa/sura-ui-table\n\n\n\n"
+33 silly independent writing new entry: "## [0.0.10](https://github.com/asurraa/sura-ui/table/compare/@asurraa/sura-ui-table@0.0.9...@asurraa/sura-ui-table@0.0.10) (2021-02-21)\n\n**Note:** Version bump only for package @asurraa/sura-ui-table\n\n\n\n"
 34 verbose independent wrote /Users/lyhourchhen/Developments/sura-ui/packages/table/CHANGELOG.md
 35 silly lifecycle No script for "version" in "sura-ui", continuing
 36 silly gitAdd [ 'packages/table/package.json', 'packages/table/CHANGELOG.md' ]
 37 silly gitCommit chore(release): publish
 37 silly gitCommit
-37 silly gitCommit  - @asurraa/sura-ui-table@0.0.9
+37 silly gitCommit  - @asurraa/sura-ui-table@0.0.10
 38 verbose git [
 38 verbose git   'commit',
 38 verbose git   '-F',
-38 verbose git   '/private/var/folders/04/n1g572j57t1802wj6w06bwp80000gn/T/31918a6e-39d0-4f1f-8ad6-d4936d0e962f/lerna-commit.txt'
+38 verbose git   '/private/var/folders/04/n1g572j57t1802wj6w06bwp80000gn/T/8265b7ec-2053-4a54-9d26-3569a2241bd9/lerna-commit.txt'
 38 verbose git ]
-39 silly gitTag @asurraa/sura-ui-table@0.0.9
+39 silly gitTag @asurraa/sura-ui-table@0.0.10
 40 verbose git [
 40 verbose git   'tag',
-40 verbose git   '@asurraa/sura-ui-table@0.0.9',
+40 verbose git   '@asurraa/sura-ui-table@0.0.10',
 40 verbose git   '-m',
-40 verbose git   '@asurraa/sura-ui-table@0.0.9'
+40 verbose git   '@asurraa/sura-ui-table@0.0.10'
 40 verbose git ]
 41 silly lifecycle No script for "postversion" in "@asurraa/sura-ui-table", continuing
 42 silly lifecycle No script for "postversion" in "sura-ui", continuing
