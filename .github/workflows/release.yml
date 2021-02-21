@@ -17,6 +17,8 @@ jobs:
         run: git checkout master
       - name: Install dependencies
         run: yarn install && yarn run lerna bootstrap
+      - name: Setting registry
+        run: npm config set registry https://registry.npmjs.com
       - name: Release
         run: npm whoami && yarn run lerna publish from-package --yes
         env:
