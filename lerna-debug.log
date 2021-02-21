@@ -9,7 +9,7 @@
 0 silly argv }
 1 notice cli v3.22.1
 2 verbose rootPath /Users/lyhourchhen/Developments/sura-ui
-3 info current version 0.0.4
+3 info current version 0.0.5
 4 silly isAnythingCommitted
 5 verbose isAnythingCommitted 1
 6 silly currentBranch
@@ -19,15 +19,15 @@
 10 silly isBehindUpstream master is behind origin/master by 0 commit(s) and ahead by 0
 11 silly hasTags
 12 verbose hasTags true
-13 silly git-describe.sync "v0.0.4-3-gbe0ab9a" => {"lastTagName":"v0.0.4","lastVersion":"v0.0.4","refCount":"3","sha":"be0ab9a","isDirty":false}
-14 info Looking for changed packages since v0.0.4
+13 silly git-describe.sync "v0.0.5-19-g855177d" => {"lastTagName":"v0.0.5","lastVersion":"v0.0.5","refCount":"19","sha":"855177d","isDirty":false}
+14 info Looking for changed packages since v0.0.5
 15 info ignoring diff in paths matching [ 'ignored-file', '*.md' ]
 16 silly checking diff packages/table
-17 silly found diff in packages/table/example/yarn.lock
-18 verbose filtered diff [ 'packages/table/example/yarn.lock' ]
+17 silly found diff in packages/table/src/index.tsx
+18 verbose filtered diff [ 'packages/table/src/index.tsx' ]
 19 verbose updated @sura-ui/table
-20 verbose git-describe undefined => "v0.0.4-3-gbe0ab9a"
-21 silly git-describe parsed => {"lastTagName":"v0.0.4","lastVersion":"v0.0.4","refCount":"3","sha":"be0ab9a","isDirty":false}
+20 verbose git-describe undefined => "v0.0.5-19-g855177d"
+21 silly git-describe parsed => {"lastTagName":"v0.0.5","lastVersion":"v0.0.5","refCount":"19","sha":"855177d","isDirty":false}
 22 silly fixed for @sura-ui/table at /Users/lyhourchhen/Developments/sura-ui/packages/table
 23 verbose getChangelogConfig using preset "conventional-changelog-angular"
 24 silly npa Result {
@@ -47,16 +47,16 @@
 24 silly npa }
 25 verbose getChangelogConfig Attempting to resolve preset "conventional-changelog-angular"
 26 info getChangelogConfig Successfully resolved preset "conventional-changelog-angular"
-27 verbose fixed increment 0.0.4 by patch
+27 verbose fixed increment 0.0.5 by patch
 28 info execute Creating releases...
 29 silly lifecycle No script for "preversion" in "sura-ui", continuing
 30 silly lifecycle No script for "preversion" in "@sura-ui/table", continuing
 31 silly lifecycle No script for "version" in "@sura-ui/table", continuing
 32 silly fixed for @sura-ui/table at /Users/lyhourchhen/Developments/sura-ui/packages/table
-33 silly fixed writing new entry: "## [0.0.5](https://github.com/LyhourChhen/table/compare/v0.0.4...v0.0.5) (2021-02-21)\n\n**Note:** Version bump only for package @sura-ui/table\n\n\n\n"
+33 silly fixed writing new entry: "## [0.0.6](https://github.com/LyhourChhen/table/compare/v0.0.5...v0.0.6) (2021-02-21)\n\n**Note:** Version bump only for package @sura-ui/table\n\n\n\n"
 34 verbose fixed wrote /Users/lyhourchhen/Developments/sura-ui/packages/table/CHANGELOG.md
 35 silly root for sura-ui at /Users/lyhourchhen/Developments/sura-ui
-36 silly root writing new entry: "## [0.0.5](https://github.com/asurraa/sura-ui/compare/v0.0.4...v0.0.5) (2021-02-21)\n\n**Note:** Version bump only for package sura-ui\n\n\n\n"
+36 silly root writing new entry: "## [0.0.6](https://github.com/asurraa/sura-ui/compare/v0.0.5...v0.0.6) (2021-02-21)\n\n**Note:** Version bump only for package sura-ui\n\n\n\n"
 37 verbose root wrote /Users/lyhourchhen/Developments/sura-ui/CHANGELOG.md
 38 silly lifecycle No script for "version" in "sura-ui", continuing
 39 silly gitAdd [
@@ -67,8 +67,8 @@
 39 silly gitAdd ]
 40 silly gitCommit chore(release): publish
 41 verbose git [ 'commit', '-m', 'chore(release): publish' ]
-42 silly gitTag v0.0.5
-43 verbose git [ 'tag', 'v0.0.5', '-m', 'v0.0.5' ]
+42 silly gitTag v0.0.6
+43 verbose git [ 'tag', 'v0.0.6', '-m', 'v0.0.6' ]
 44 silly lifecycle No script for "postversion" in "@sura-ui/table", continuing
 45 silly lifecycle No script for "postversion" in "sura-ui", continuing
 46 info git Pushing tags...
