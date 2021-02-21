@@ -1,5 +1,12 @@
+# Node Module 
 node_modules
 **node_modules
 *node_modules
 */node_modules
 **/node_modules
+
+# Release 
+dist
+**dist
+*/dist
+**/dist
