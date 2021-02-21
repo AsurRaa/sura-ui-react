@@ -9,7 +9,7 @@
 0 silly argv }
 1 notice cli v3.22.1
 2 verbose rootPath /Users/lyhourchhen/Developments/sura-ui
-3 info current version 0.0.2
+3 info current version 0.0.3
 4 silly isAnythingCommitted
 5 verbose isAnythingCommitted 1
 6 silly currentBranch
@@ -18,63 +18,84 @@
 9 silly isBehindUpstream
 10 silly isBehindUpstream master is behind origin/master by 0 commit(s) and ahead by 0
 11 silly hasTags
-12 verbose hasTags false
-13 info Assuming all packages changed
-14 verbose updated @sura-ui/table
-15 verbose git-describe undefined => "5626b83"
-16 silly git-describe parsed => {"refCount":"4","sha":"5626b83","isDirty":false}
-17 silly fixed for @sura-ui/table at /Users/lyhourchhen/Developments/sura-ui/packages/table
-18 verbose getChangelogConfig using preset "conventional-changelog-angular"
-19 silly npa Result {
-19 silly npa   type: 'tag',
-19 silly npa   registry: true,
-19 silly npa   where: undefined,
-19 silly npa   raw: 'conventional-changelog-angular',
-19 silly npa   name: 'conventional-changelog-angular',
-19 silly npa   escapedName: 'conventional-changelog-angular',
-19 silly npa   scope: undefined,
-19 silly npa   rawSpec: '',
-19 silly npa   saveSpec: null,
-19 silly npa   fetchSpec: 'latest',
-19 silly npa   gitRange: undefined,
-19 silly npa   gitCommittish: undefined,
-19 silly npa   hosted: undefined
-19 silly npa }
-20 verbose getChangelogConfig Attempting to resolve preset "conventional-changelog-angular"
-21 info getChangelogConfig Successfully resolved preset "conventional-changelog-angular"
-22 verbose fixed increment 0.0.2 by patch
-23 info execute Creating releases...
-24 silly lifecycle No script for "preversion" in "sura-ui", continuing
-25 silly lifecycle No script for "preversion" in "@sura-ui/table", continuing
-26 silly lifecycle No script for "version" in "@sura-ui/table", continuing
-27 silly fixed for @sura-ui/table at /Users/lyhourchhen/Developments/sura-ui/packages/table
-28 silly fixed writing new entry: "## 0.0.3 (2021-02-21)\n\n**Note:** Version bump only for package @sura-ui/table\n\n\n\n"
-29 verbose fixed wrote /Users/lyhourchhen/Developments/sura-ui/packages/table/CHANGELOG.md
-30 silly root for sura-ui at /Users/lyhourchhen/Developments/sura-ui
-31 silly root writing new entry: "## 0.0.3 (2021-02-21)\n\n**Note:** Version bump only for package sura-ui\n\n\n\n"
-32 verbose root wrote /Users/lyhourchhen/Developments/sura-ui/CHANGELOG.md
-33 silly lifecycle No script for "version" in "sura-ui", continuing
-34 silly gitAdd [
-34 silly gitAdd   'packages/table/package.json',
-34 silly gitAdd   'packages/table/CHANGELOG.md',
-34 silly gitAdd   'CHANGELOG.md',
-34 silly gitAdd   'lerna.json'
-34 silly gitAdd ]
-35 silly gitCommit chore(release): publish
-36 verbose git [ 'commit', '-m', 'chore(release): publish' ]
-37 silly gitTag v0.0.3
-38 verbose git [ 'tag', 'v0.0.3', '-m', 'v0.0.3' ]
-39 silly lifecycle No script for "postversion" in "@sura-ui/table", continuing
-40 silly lifecycle No script for "postversion" in "sura-ui", continuing
-41 info git Pushing tags...
-42 silly gitPush origin master
-43 silly parseGitRepo
-44 verbose git [ 'config', '--get', 'remote.origin.url' ]
-45 silly createGitHubClient
-46 error Error: A GH_TOKEN environment variable is required.
-46 error     at createGitHubClient (/Users/lyhourchhen/Developments/sura-ui/node_modules/@lerna/github-client/lib/github-client.js:17:11)
-46 error     at createClient (/Users/lyhourchhen/Developments/sura-ui/node_modules/@lerna/version/lib/create-release.js:16:14)
-46 error     at createRelease (/Users/lyhourchhen/Developments/sura-ui/node_modules/@lerna/version/lib/create-release.js:25:18)
-46 error     at /Users/lyhourchhen/Developments/sura-ui/node_modules/@lerna/version/index.js:282:9
-46 error     at /Users/lyhourchhen/Developments/sura-ui/node_modules/p-waterfall/index.js:4:73
-46 error     at /Users/lyhourchhen/Developments/sura-ui/node_modules/p-reduce/index.js:16:10
+12 verbose hasTags true
+13 silly git-describe.sync "v0.0.3-3-gee2ac1c" => {"lastTagName":"v0.0.3","lastVersion":"v0.0.3","refCount":"3","sha":"ee2ac1c","isDirty":false}
+14 info Looking for changed packages since v0.0.3
+15 info ignoring diff in paths matching [ 'ignored-file', '*.md' ]
+16 silly checking diff packages/table
+17 silly found diff in packages/table/dist/index.css
+17 silly found diff in packages/table/dist/index.d.ts
+17 silly found diff in packages/table/dist/index.js
+17 silly found diff in packages/table/dist/index.js.map
+17 silly found diff in packages/table/dist/index.modern.js
+17 silly found diff in packages/table/dist/index.modern.js.map
+17 silly found diff in packages/table/dist/index.test.d.ts
+17 silly found diff in packages/table/example/public/index.html
+18 verbose filtered diff [
+18 verbose filtered diff   'packages/table/dist/index.css',
+18 verbose filtered diff   'packages/table/dist/index.d.ts',
+18 verbose filtered diff   'packages/table/dist/index.js',
+18 verbose filtered diff   'packages/table/dist/index.js.map',
+18 verbose filtered diff   'packages/table/dist/index.modern.js',
+18 verbose filtered diff   'packages/table/dist/index.modern.js.map',
+18 verbose filtered diff   'packages/table/dist/index.test.d.ts',
+18 verbose filtered diff   'packages/table/example/public/index.html'
+18 verbose filtered diff ]
+19 verbose updated @sura-ui/table
+20 verbose git-describe undefined => "v0.0.3-3-gee2ac1c"
+21 silly git-describe parsed => {"lastTagName":"v0.0.3","lastVersion":"v0.0.3","refCount":"3","sha":"ee2ac1c","isDirty":false}
+22 silly fixed for @sura-ui/table at /Users/lyhourchhen/Developments/sura-ui/packages/table
+23 verbose getChangelogConfig using preset "conventional-changelog-angular"
+24 silly npa Result {
+24 silly npa   type: 'tag',
+24 silly npa   registry: true,
+24 silly npa   where: undefined,
+24 silly npa   raw: 'conventional-changelog-angular',
+24 silly npa   name: 'conventional-changelog-angular',
+24 silly npa   escapedName: 'conventional-changelog-angular',
+24 silly npa   scope: undefined,
+24 silly npa   rawSpec: '',
+24 silly npa   saveSpec: null,
+24 silly npa   fetchSpec: 'latest',
+24 silly npa   gitRange: undefined,
+24 silly npa   gitCommittish: undefined,
+24 silly npa   hosted: undefined
+24 silly npa }
+25 verbose getChangelogConfig Attempting to resolve preset "conventional-changelog-angular"
+26 info getChangelogConfig Successfully resolved preset "conventional-changelog-angular"
+27 verbose fixed increment 0.0.3 by patch
+28 info execute Creating releases...
+29 silly lifecycle No script for "preversion" in "sura-ui", continuing
+30 silly lifecycle No script for "preversion" in "@sura-ui/table", continuing
+31 silly lifecycle No script for "version" in "@sura-ui/table", continuing
+32 silly fixed for @sura-ui/table at /Users/lyhourchhen/Developments/sura-ui/packages/table
+33 silly fixed writing new entry: "## [0.0.4](https://github.com/LyhourChhen/table/compare/v0.0.3...v0.0.4) (2021-02-21)\n\n**Note:** Version bump only for package @sura-ui/table\n\n\n\n"
+34 verbose fixed wrote /Users/lyhourchhen/Developments/sura-ui/packages/table/CHANGELOG.md
+35 silly root for sura-ui at /Users/lyhourchhen/Developments/sura-ui
+36 silly root writing new entry: "## [0.0.4](https://github.com/asurraa/sura-ui/compare/v0.0.3...v0.0.4) (2021-02-21)\n\n**Note:** Version bump only for package sura-ui\n\n\n\n"
+37 verbose root wrote /Users/lyhourchhen/Developments/sura-ui/CHANGELOG.md
+38 silly lifecycle No script for "version" in "sura-ui", continuing
+39 silly gitAdd [
+39 silly gitAdd   'packages/table/package.json',
+39 silly gitAdd   'packages/table/CHANGELOG.md',
+39 silly gitAdd   'CHANGELOG.md',
+39 silly gitAdd   'lerna.json'
+39 silly gitAdd ]
+40 silly gitCommit chore(release): publish
+41 verbose git [ 'commit', '-m', 'chore(release): publish' ]
+42 silly gitTag v0.0.4
+43 verbose git [ 'tag', 'v0.0.4', '-m', 'v0.0.4' ]
+44 silly lifecycle No script for "postversion" in "@sura-ui/table", continuing
+45 silly lifecycle No script for "postversion" in "sura-ui", continuing
+46 info git Pushing tags...
+47 silly gitPush origin master
+48 silly parseGitRepo
+49 verbose git [ 'config', '--get', 'remote.origin.url' ]
+50 silly createGitHubClient
+51 error Error: A GH_TOKEN environment variable is required.
+51 error     at createGitHubClient (/Users/lyhourchhen/Developments/sura-ui/node_modules/@lerna/github-client/lib/github-client.js:17:11)
+51 error     at createClient (/Users/lyhourchhen/Developments/sura-ui/node_modules/@lerna/version/lib/create-release.js:16:14)
+51 error     at createRelease (/Users/lyhourchhen/Developments/sura-ui/node_modules/@lerna/version/lib/create-release.js:25:18)
+51 error     at /Users/lyhourchhen/Developments/sura-ui/node_modules/@lerna/version/index.js:282:9
+51 error     at /Users/lyhourchhen/Developments/sura-ui/node_modules/p-waterfall/index.js:4:73
+51 error     at /Users/lyhourchhen/Developments/sura-ui/node_modules/p-reduce/index.js:16:10
