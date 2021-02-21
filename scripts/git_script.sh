@@ -1,5 +1,5 @@
 #!usr/bin/sh
-#@asurraa
+# @asurraa
 
 git add .
 git commit 
