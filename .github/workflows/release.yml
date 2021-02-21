@@ -8,6 +8,9 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v1
+          with: 
+            fetch-depth: "0"
+          run: git fetch --depth=1 origin +refs/tags/*:refs/tags/*
       - name: Setup Node.js
         uses: actions/setup-node@v1
         with:
