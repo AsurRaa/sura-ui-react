@@ -5,7 +5,7 @@ interface Props {
   text: string
 }
 // just test only
-// made some change nn
+// made some change nnd
 export const ExampleComponent = ({ text }: Props) => {
   return <div className={styles.test}>Example Component: {text}</div>
 }
