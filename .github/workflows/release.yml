@@ -40,7 +40,8 @@ jobs:
       env:
           NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
     - name: Publish with Lerna
-      run: git stash && yarn lerna publish from-package --yes 
+      run: npm whoami
+      # run: git stash && yarn lerna publish from-package --yes 
       env:
         NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
         GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
