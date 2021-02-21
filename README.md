@@ -2,4 +2,15 @@
 
 # sura-ui by @asurraa
 
-> Internal componenet and utilities @asurraa
+> React Component that use internally [@AsurRaa](https://github.com/asurraa).
+
+| Name  | Description                | Link                                                                              |
+| ----- | -------------------------- | --------------------------------------------------------------------------------- |
+| Table | Table++ built on top antd. | [Link to](https://github.com/AsurRaa/sura-ui-react/tree/main/packages/sura-table) |
+
+### Install & Usages
+
+```sh
+yarn add @sura-ui #full-packages
+yarn add @sura-ui/table #table
+```
