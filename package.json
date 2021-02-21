@@ -10,5 +10,8 @@
   "scripts": {
     "lerna": "npx lerna",
     "wizard": "npx lerna-wizard"
+  },
+  "publishConfig": {
+    "registry":"https://npm.pkg.github.com"
   }
 }

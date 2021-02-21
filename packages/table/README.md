@@ -7,7 +7,7 @@
 ## Install
 
 ```bash
-npm install --save table
+npm install --save @sura-ui/table
 ```
 
 ## Usage
