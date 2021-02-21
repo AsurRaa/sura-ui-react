@@ -1,7 +1,7 @@
 {
   "name": "sura-ui",
-  "author": "@asurraa",
-  "private": true,
+  "author": "asurraa",
+  "repository": {"type": "git","url": "https://github.com/asurraa/sura-ui"},
   "devDependencies": {
     "lerna": "^3.22.1"
   },"workspaces": [
@@ -12,8 +12,5 @@
     "wizard": "lerna-wizard",
     "release-gen": "lerna version --conventional-commits --create-release github",
     "git": "sh scripts/git_script.sh"
-  },
-  "publishConfig": {
-    "registry":"https://npm.pkg.github.com"
   }
 }
