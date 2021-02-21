@@ -34,4 +34,4 @@ jobs:
           GH_TOKEN: ${{ secrets.GITHUB_PAT }}
           NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
           NODE_AUTH_TOKEN: ${{secrets.NPM_TOKEN}}
-        run: npm whoami && yarn run lerna publish from-package --yes
+        run: npm whoami && yarn run lerna publish from-package --yes --no-verify-registry --no-verify-access
