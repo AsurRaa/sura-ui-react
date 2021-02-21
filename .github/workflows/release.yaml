@@ -12,11 +12,11 @@ test-and-release:
       node-version: 12
     - run: npm ci
     - run: npm test
-    - name: Release
-        env:
-        GITHUB_TOKEN: ${{ secrets.GH_TOKEN }}
-        NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
-        run: npm run semantic-release
+    - name: release
+        - env:
+        - GITHUB_TOKEN: ${{ secrets.GH_TOKEN }}
+        - NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
+        - run: npm run semantic-release
 # on:
 #   push:
 #     tags: "v*"
