@@ -4,7 +4,7 @@ import styles from './styles.module.css'
 interface Props {
   text: string
 }
-// just test only
+// just test onlyssss
 // made some change nnd
 export const ExampleComponent = ({ text }: Props) => {
   return <div className={styles.test}>Example Component: {text}</div>
