@@ -10,10 +10,11 @@
   },
   "command": {
     "publish": {
+      "npmClient": "npm",
+      "verifyAccess": false,
       "ignoreChanges": [
         "ignored-file",
         "*.md"
-        
       ],
       "registry": "https://registry.npmjs.org/",
       "message": "chore(release): publish"
