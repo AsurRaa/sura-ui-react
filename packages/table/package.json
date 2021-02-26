@@ -5,7 +5,7 @@
   "author": "lyhourchhen",
   "license": "MIT",
   "repository": {
-    "url": "https://github.com/asurraa/sura-ui.git",
+    "url": "git@github.com:asurraa/sura-ui.git",
     "type": "git",
     "directory": "packages/table"
   },

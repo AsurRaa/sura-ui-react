@@ -1,12 +1,16 @@
 {
   "name": "sura-ui",
   "author": "asurraa",
-  "repository": {"type": "git","url": "https://github.com/asurraa/sura-ui"},
+  "repository": {
+    "type": "git",
+    "url": "git@github.com:asurraa/sura-ui.git"
+  },
   "private": true,
   "license": "MIT",
   "devDependencies": {
     "lerna": "^3.22.1"
-  },"workspaces": [
+  },
+  "workspaces": [
     "packages/*"
   ],
   "scripts": {
@@ -16,4 +20,3 @@
     "git": "sh scripts/git_script.sh"
   }
 }
- 
