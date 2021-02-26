@@ -8,6 +8,7 @@
   "main": "dist/index.js",
   "module": "dist/index.modern.js",
   "source": "src/index.tsx",
+  "private":true,
   "engines": {
     "node": ">=10"
   },
@@ -60,5 +61,5 @@
   "files": [
     "dist"
   ],
-  "gitHead": "dfbd7cd54aac948a23dd12c7e851e44a55b36ec7"
+  "gitHead": "4f67c3faf58a053ef3b49166e1537d36497d26c6"
 }
