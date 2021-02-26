@@ -39,7 +39,7 @@ jobs:
         env:
           NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
       - name: Publish with Lerna
-        run: npm whoami && git stash && npx lerna publish --exact --no-git-tag-version --no-push --yes --npm-tag=latest -- force-publish=*
+        run: npm whoami && git stash && npx lerna publish from-package --exact --no-git-tag-version --no-push --yes --npm-tag=latest --force-publish=*
         env:
           NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
