@@ -1,6 +1,6 @@
 {
   "name": "@asurraa/sura-ui-table",
-  "version": "0.0.15",
+  "version": "0.0.16",
   "description": "Made with create-react-library",
   "author": "lyhourchhen",
   "license": "MIT",
@@ -8,7 +8,7 @@
   "main": "dist/index.js",
   "module": "dist/index.modern.js",
   "source": "src/index.tsx",
-  "private":true,
+  "private": true,
   "engines": {
     "node": ">=10"
   },
