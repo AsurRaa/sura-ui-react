@@ -4,12 +4,19 @@
   "description": "Made with create-react-library",
   "author": "LyhourChhen",
   "license": "MIT",
-  "repository": "https://github.com/asurraa/sura-ui",
+  "repository": {
+    "url": "https://github.com/asurraa/sura-ui.git",
+    "type": "git",
+    "directory": "packages/modal"
+  },
   "main": "dist/index.js",
   "module": "dist/index.modern.js",
   "source": "src/index.tsx",
   "engines": {
     "node": ">=10"
+  },
+  "publishConfig": {
+    "registry": "https://npm.pkg.github.com"
   },
   "scripts": {
     "build": "microbundle-crl --no-compress --format modern,cjs",
