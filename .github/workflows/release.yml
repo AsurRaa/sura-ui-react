@@ -38,6 +38,8 @@ jobs:
           npm whoami
         env:
           NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
+      - name: Add Token to to .npmrc
+        run:  echo "//registry.npmjs.org/:_authToken=${{ secrets.NPM_TOKEN }}" > ~/.npmrc
       - name: Publish with Lerna
         run: npm whoami && git stash && npx lerna publish from-package --exact --no-git-tag-version --no-push --yes --npm-tag=latest --force-publish=*
         env:
