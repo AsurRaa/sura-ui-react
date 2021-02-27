@@ -18,7 +18,7 @@
   ],
   "scripts": {
     "lerna": "lerna",
-    "wizard": "lerna-wizard",
+    "wizard": "npx lerna-wizard",
     "release-gen": "lerna version --conventional-commits --create-release github",
     "git": "sh scripts/git_script.sh"
   }
