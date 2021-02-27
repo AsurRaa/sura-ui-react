@@ -1,4 +1,4 @@
-# sura-ui by @asurraa
+# sura-ui 
 
 [![lerna](https://img.shields.io/badge/maintained%20with-lerna-cc00ff.svg)](https://lerna.js.org/)
 
@@ -7,10 +7,4 @@
 | Name           | Description                 | Link                                                                     |
 | -------------- | --------------------------- | ------------------------------------------------------------------------ |
 | @sura-ui/table | enhanded table on top antd. | [Link to](https://github.com/asurraa/sura-ui/tree/master/packages/table) |
-
-### Install & Usages
-
-```sh
-yarn add @sura-ui #full-packages
-yarn add @sura-ui/table #table
-```
+| @sura-ui/modal | dnd modal build on top antd | [Link to](https://github.com/asurraa/sura-ui/tree/master/packages/modal) |
