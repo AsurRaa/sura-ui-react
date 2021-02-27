@@ -37,7 +37,7 @@ jobs:
           NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
 
       - name: Publish package
-        run: npm whoami && git stash && yarn lerna publish from-package --yes --exact --no-git-tag-version --no-push --yes --npm-tag=latest --force-publish=*
+        run: npm whoami && git stash && yarn lerna publish from-package --yes --exact --no-git-tag-version --no-push --yes --npm-tag=latest
         env:
           GH_TOKEN: ${{ secrets.GITHUB_PAT }}
           GITHUB_TOKEN: ${{ secrets.GITHUB_PAT }}
