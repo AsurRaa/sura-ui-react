@@ -15,7 +15,8 @@
     "react-scripts": "4.0.3",
     "typescript": "^4.1.2",
     "web-vitals": "^1.0.1",
-    "@asurraa/sura-ui-modal": "link:../packages/modal"
+    "@asurraa/sura-ui-modal": "link:../packages/modal",
+    "antd": "link:../"
   },
   "scripts": {
     "start": "react-scripts start",
