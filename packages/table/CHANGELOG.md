@@ -3,6 +3,14 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.0.18](https://github.com/asurraa/sura-ui/tree/master/packages/table/compare/@asurraa/sura-ui-table@0.0.16...@asurraa/sura-ui-table@0.0.18) (2021-02-27)
+
+**Note:** Version bump only for package @asurraa/sura-ui-table
+
+
+
+
+
 ## [0.0.15](https://github.com/asurraa/sura-ui/table/compare/@asurraa/sura-ui-table@0.0.14...@asurraa/sura-ui-table@0.0.15) (2021-02-21)
 
 **Note:** Version bump only for package @asurraa/sura-ui-table
