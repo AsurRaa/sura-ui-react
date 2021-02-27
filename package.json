@@ -21,5 +21,8 @@
     "wizard": "npx lerna-wizard",
     "release-gen": "lerna version --conventional-commits --create-release github",
     "git": "sh scripts/git_script.sh"
+  },
+  "dependencies": {
+    "antd": "^4.12.3"
   }
 }

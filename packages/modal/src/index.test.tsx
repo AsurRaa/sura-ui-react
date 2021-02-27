@@ -1,7 +1,7 @@
-import { ExampleComponent } from '.'
+import { AsurRaaModal } from '.'
 
 describe('ExampleComponent', () => {
   it('is truthy', () => {
-    expect(ExampleComponent).toBeTruthy()
+    expect(AsurRaaModal).toBeTruthy()
   })
 })

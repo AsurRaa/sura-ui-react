@@ -1,7 +1,7 @@
 {
   "name": "@asurraa/sura-ui-modal",
   "version": "1.0.4",
-  "description": "Made with create-react-library",
+  "description": "AsurRaa dnd Modal built on top of antd",
   "author": "LyhourChhen",
   "license": "MIT",
   "repository": {
@@ -67,5 +67,10 @@
   "files": [
     "dist"
   ],
-  "gitHead": "46ca9f8f2e710cad471cfd2267d164c994cc5e03"
+  "gitHead": "46ca9f8f2e710cad471cfd2267d164c994cc5e03",
+  "dependencies": {
+    "ant-design-draggable-modal": "^1.0.0",
+    "rc-dialog": "^8.5.1",
+    "antd": "link:../../"
+  }
 }
