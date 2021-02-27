@@ -4,11 +4,7 @@
   "description": "Made with create-react-library",
   "author": "LyhourChhen",
   "license": "MIT",
-  "repository": {
-    "url": "git@github.com:asurraa/sura-ui.git",
-    "type": "git",
-    "directory": "packages/modal"
-  },
+  "repository": "https://github.com/asurraa/sura-ui/tree/master/packages/modal",
   "main": "dist/index.js",
   "module": "dist/index.modern.js",
   "source": "src/index.tsx",
