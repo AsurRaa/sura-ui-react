@@ -1,13 +1,11 @@
 import './App.css';
-import { AsurRaaDraggableModalProvider } from "@asurraa/sura-ui-modal"
+import { Button } from "antd"
 function App() {
   return (
-    <AsurRaaDraggableModalProvider>    
-      <div >
+    <div >
       <h2 style={{ textAlign: 'center' }}>SURA-UI EXAMPLE</h2>
+      <Button>Open Modal</Button>
     </div>
-    </AsurRaaDraggableModalProvider>
-
   );
 }
 
