@@ -21,7 +21,8 @@
     "wizard": "npx lerna-wizard",
     "release-gen": "lerna version --conventional-commits --create-release github",
     "git": "sh scripts/git_script.sh",
-    "build": "yarn lerna run build"
+    "build": "yarn lerna run build",
+    "publish-example": "cd example && yarn && yarn predeploy && yarn deploy"
   },
   "dependencies": {
     "antd": "^4.12.3",
