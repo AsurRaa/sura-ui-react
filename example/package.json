@@ -1,15 +1,18 @@
 {
-  "name": "input-search-example",
-  "homepage": ".",
+  "name": "sura-ui-example",
+  "homepage": "http://asurraa.github.io/sura-ui",
   "version": "0.0.0",
   "private": true,
   "scripts": {
     "start": "node ../node_modules/react-scripts/bin/react-scripts.js start",
-    "build": "node ../node_modules/react-script/bin/react-script.js build",
-    "test": "node ../node_modules/react-script/bin/react-script.js test",
-    "eject": "node ../node_modules/react-script/bin/react-script.js eject"
+    "build": "node ../node_modules/react-scripts/bin/react-scripts.js build",
+    "test": "node ../node_modules/react-scripts/bin/react-scripts.js test",
+    "eject": "node ../node_modules/react-scripts/bin/react-scripts.js eject",
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d build"
   },
   "dependencies": {
+    "@asurraa/sura-ui-modal": "../packages/modal",
     "@testing-library/jest-dom": "link:../node_modules/@testing-library/jest-dom",
     "@testing-library/react": "link:../node_modules/@testing-library/react",
     "@testing-library/user-event": "link:../node_modules/@testing-library/user-event",
@@ -17,12 +20,12 @@
     "@types/node": "link:../node_modules/@types/node",
     "@types/react": "link:../node_modules/@types/react",
     "@types/react-dom": "link:../node_modules/@types/react-dom",
+    "gh-pages": "^3.1.0",
+    "input-search": "link:../packages/input-search",
     "react": "link:../node_modules/react",
     "react-dom": "link:../node_modules/react-dom",
     "react-scripts": "link:../node_modules/react-scripts",
-    "typescript": "link:../node_modules/typescript",
-    "input-search": "link:../packages/input-search",
-    "@asurraa/sura-ui-modal": "../packages/modal"
+    "typescript": "link:../node_modules/typescript"
   },
   "devDependencies": {
     "@babel/plugin-syntax-object-rest-spread": "^7.8.3"
