@@ -20,7 +20,8 @@
     "lerna": "lerna",
     "wizard": "npx lerna-wizard",
     "release-gen": "lerna version --conventional-commits --create-release github",
-    "git": "sh scripts/git_script.sh"
+    "git": "sh scripts/git_script.sh",
+    "build": "yarn lerna run build"
   },
   "dependencies": {
     "antd": "^4.12.3",
