@@ -8,7 +8,6 @@
     "url": "https://github.com/asurraa/sura-ui.git"
   },
   "homepage": "https://github.com/asurraa/sura-ui",
-  "private": true,
   "license": "MIT",
   "devDependencies": {
     "lerna": "^3.20.2"
