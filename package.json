@@ -16,8 +16,8 @@
     "storybook": "start-storybook -p 6006",
     "build-storybook": "build-storybook",
     "build": "lerna run build --stream",
-    "dev": "lerna run dev --stream", 
-    "publish": "lerna publish from-package"
+    "dev": "lerna run dev --stream",
+    "publish": "yarn lerna publish from-package"
   },
   "dependencies": {
     "antd": "^4.15.2",
@@ -38,5 +38,6 @@
     "babel-loader": "^8.2.2",
     "lerna": "^4.0.0",
     "tsconfig-paths-webpack-plugin": "^3.5.1"
-  }
+  },
+  "version": "0.0.0"
 }
