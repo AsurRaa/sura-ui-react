@@ -16,7 +16,7 @@
 
 ## Description
 
-AsurRaa's product components & utilities library for React.
+The Combine Series of components & utilities are placed here to support our developments workflows.
 
 ## Features
 
