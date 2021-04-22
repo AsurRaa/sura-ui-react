@@ -1,8 +1,16 @@
+import "../styles/App.less";
+import { AsurRaaModal } from "@asurraa/sura-ui-modal";
+import { Button } from "antd";
+import { useState } from "react";
 function App() {
+  const [state, setState] = useState<boolean>(false);
   return (
     <div className="App">
       <header className="App-header">Playground</header>
-      <div></div>
+      <Button onClick={() => setState(true)}>open</Button>
+      <div>
+        <AsurRaaModal visible={true} />
+      </div>
     </div>
   );
 }

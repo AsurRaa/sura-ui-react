@@ -3,6 +3,8 @@
         "Flexbox",
         "antd",
         "asurraa",
-        "microbundle"
+        "craco",
+        "microbundle",
+        "peaceiris"
     ]
 }

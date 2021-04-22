@@ -3,27 +3,28 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
+    "@asurraa/sura-ui-modal": "link: ../packages/modal",
+    "@craco/craco": "^6.1.1",
+    "antd": "link: ../",
     "react": "link: ../",
     "react-dom": "link: ../",
     "typescript": "link: ../",
-    "web-vitals": "^1.0.1",
-    "react-scripts": "4.0.3", 
-    "@asurraa/sura-ui-modal": "link: ../packages/modal"
+    "web-vitals": "^1.0.1"
   },
   "devDependencies": {
-    "@types/node": "link: ../",
-    "@types/react": "link: ../",
-    "@types/react-dom": "link: ../",
     "@testing-library/jest-dom": "^5.11.4",
     "@testing-library/react": "^11.1.0",
     "@testing-library/user-event": "^12.1.10",
-    "@types/jest": "^26.0.15"
+    "@types/jest": "^26.0.15",
+    "@types/node": "link: ../",
+    "@types/react": "link: ../",
+    "@types/react-dom": "link: ../",
+    "craco-less": "^1.17.1"
   },
   "scripts": {
-    "start": "react-scripts start",
-    "build": "react-scripts build",
-    "test": "react-scripts test",
-    "eject": "react-scripts eject"
+    "start": "craco start",
+    "build": "craco build",
+    "test": "craco test"
   },
   "eslintConfig": {
     "extends": [
