@@ -16,7 +16,8 @@
     "storybook": "start-storybook -p 6006",
     "build-storybook": "build-storybook",
     "build": "lerna run build --stream",
-    "dev": "lerna run dev --stream"
+    "dev": "lerna run dev --stream", 
+    "publish": "lerna publish from-package"
   },
   "dependencies": {
     "antd": "^4.15.2",
