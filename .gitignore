@@ -10,3 +10,6 @@ dist
 **dist
 */dist
 **/dist
+
+# Storybook
+storybook-static
