@@ -9,7 +9,7 @@ function App() {
       <header className="App-header">Playground</header>
       <Button onClick={() => setState(true)}>open</Button>
       <div>
-        <AsurRaaModal visible={true} />
+        <AsurRaaModal onCancel={() => setState(false)} visible={state} />
       </div>
     </div>
   );
