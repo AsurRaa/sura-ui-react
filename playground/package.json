@@ -7,7 +7,8 @@
     "react-dom": "link: ../",
     "typescript": "link: ../",
     "web-vitals": "^1.0.1",
-    "react-scripts": "4.0.3"
+    "react-scripts": "4.0.3", 
+    "@asurraa/sura-ui-table": "link: ../packages/table"
   },
   "devDependencies": {
     "@types/node": "link: ../",

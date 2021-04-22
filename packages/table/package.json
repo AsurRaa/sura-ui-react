@@ -1,0 +1,25 @@
+{
+    "name": "@asurraa/sura-ui-table",
+    "version": "1.0.0",
+    "description": "asurraa table component",
+    "author": "@asurraa",
+    "license": "MIT",
+    "repository": "/",
+    "main": "dist/index.js",
+    "module": "dist/index.modern.js",
+    "source": "src/index.tsx",
+    "engines": {
+      "node": ">=10"
+    },
+    "peerDependencies": {
+        "react": "17.0.2"
+    },
+    "scripts": {
+      "build": "microbundle-crl --no-compress --format modern,cjs",
+      "start": "microbundle-crl watch --no-compress --format modern,cjs"
+    },
+    "files": [
+      "dist"
+    ]
+  }
+  
