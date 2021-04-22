@@ -8,15 +8,16 @@
     ]
   },
   "dependencies": {
+    "antd": "^4.15.2",
     "react": "^17.0.2",
     "react-dom": "^17.0.2",
     "typescript": "^4.2.4"
   },
   "devDependencies": {
-    "lerna": "^4.0.0",
     "@types/node": "^14.14.41",
     "@types/react": "^17.0.3",
     "@types/react-dom": "^17.0.3",
+    "lerna": "^4.0.0",
     "microbundle-crl": "^0.13.11"
   }
 }
