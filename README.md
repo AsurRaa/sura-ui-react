@@ -3,7 +3,7 @@
 </p>
 <h1 align="center"> SURA UI </h1>
 <p align="center">
-  <b >AsurRaa's product components & Utilites library for React.</b>
+  <b >AsurRaa's product components & Utilities library for React.</b>
 </p>
 
 <div align="center">
@@ -16,8 +16,8 @@
 
 ## Description
 
-**SURA-UI** AsurRaa's product components & Utilites library for React..
+AsurRaa's product components & utilities library for React.
 
 ## More
 
-- [developments]() - developments guide.
+- [Developments](https://github.com/asurraa/sura-ui/blob/master/guides/development.guide.md) - developments guide.
