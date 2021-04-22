@@ -1,8 +1,9 @@
-# AsurRaa Table 
-> Build on top of AntdTable and use Internally at AsuRaa.
+# @asurraa/sura-ui-table 
+> Extendable on top of AntdTable with mutiple functional and use Internally at AsuRaa.
 
-
-####  [Full Example](https://github.com/AsurRaa/pos-gym-ui/tree/dev/src/components/asurraa-table#example)
+```sh
+yarn add @asurraa/sura-ui-table
+```
 
 
 ## Props
@@ -148,19 +149,4 @@ export default ServicesPage;
     />
 </div>
 ```
-
-
-### Todos 
-- [ ] Add consume generic to action props
-- [ ] Add consume generic to Column from table
-- [ ] Add SWR to Table itself
-- [x] Add Model 
-- [x] Delete Modal with callback
-- [ ] Edit Row 
-- [ ] Visible Columns
-- [x] Search main
-- [ ] Search Base Column 
-- [ ] Filter From -> To 
-- [x] Refresh Button
-- [ ] Pagible  
 
