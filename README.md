@@ -36,9 +36,6 @@ The combine series of components & utilities are placed here to support our deve
 
 
 
-## More
-
-- [Developments](https://github.com/asurraa/sura-ui/blob/master/guides/development.guide.md) - developments guide.
 
 ## LICENSE
 
