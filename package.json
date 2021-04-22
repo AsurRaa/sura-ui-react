@@ -17,7 +17,7 @@
     "build-storybook": "build-storybook",
     "build": "lerna run build --stream",
     "dev": "lerna run dev --stream",
-    "publish": "yarn lerna publish from-package"
+    "package-publish": "yarn lerna publish from-package"
   },
   "dependencies": {
     "antd": "^4.15.2",
