@@ -1,0 +1,28 @@
+{
+  "name": "@asurraa/sura-ui-modal",
+  "version": "1.0.0",
+  "description": "asurraa modal component",
+  "author": "@asurraa",
+  "license": "MIT",
+  "repository": "https://github.com/asurraa/sura-ui/tree/master/packages/table",
+  "main": "dist/index.js",
+  "module": "dist/index.modern.js",
+  "source": "src/index.tsx",
+  "engines": {
+    "node": ">=10"
+  },
+  "peerDependencies": {
+    "react": "17.0.2"
+  },
+  "scripts": {
+    "dev": "microbundle watch -o dist/ --sourcemap false --no-compress --jsx React.createElement",
+    "build": "microbundle-crl --no-compress --format modern,cjs",
+    "start": "microbundle-crl watch --no-compress --format modern,cjs"
+  },
+  "files": [
+    "dist"
+  ],
+  "dependencies": {
+  
+  }
+}

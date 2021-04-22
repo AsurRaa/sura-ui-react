@@ -8,7 +8,7 @@
     "typescript": "link: ../",
     "web-vitals": "^1.0.1",
     "react-scripts": "4.0.3", 
-    "@asurraa/sura-ui-table": "link: ../packages/table"
+    "@asurraa/sura-ui-modal": "link: ../packages/modal"
   },
   "devDependencies": {
     "@types/node": "link: ../",
