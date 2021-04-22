@@ -1,5 +1,8 @@
 import "../styles/App.less";
-import { AsurRaaModal } from "@asurraa/sura-ui-modal";
+import {
+  AsurRaaModal,
+  AsurRaaDraggableModalProvider,
+} from "@asurraa/sura-ui-modal";
 import { Button } from "antd";
 import { useState } from "react";
 function App() {
@@ -9,7 +12,13 @@ function App() {
       <header className="App-header">Playground</header>
       <Button onClick={() => setState(true)}>open</Button>
       <div>
-        <AsurRaaModal onCancel={() => setState(false)} visible={state} />
+        <AsurRaaDraggableModalProvider>
+          <AsurRaaModal
+            title={"Test Modal"}
+            onCancel={() => setState(false)}
+            visible={state}
+          />
+        </AsurRaaDraggableModalProvider>
       </div>
     </div>
   );
