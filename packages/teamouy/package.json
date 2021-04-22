@@ -1,0 +1,65 @@
+{
+  "name": "@asurraa/sura-ui-teamouy",
+  "version": "1.0.0",
+  "description": "A collection of configuration files containing prettier, eslint, stylelint use internally at AsurRaa.",
+  "author": "@asurraa",
+  "license": "MIT",
+  "main": "dist/index.js",
+  "module": "dist/index.modern.js",
+  "source": "src/index.tsx",
+ 
+  "scripts": {
+    "dev": "tsc -w",
+    "build": "tsc --build tsconfig.json",
+    "deps": "yarn upgrade-interactive --latest",
+    "prepublish": "yarn build",
+    "prettier": "prettier -c --write \"**/*\""
+  },
+  "dependencies": {
+    "@babel/core": "^7.13.10",
+    "@babel/eslint-parser": "^7.13.10",
+    "@babel/plugin-proposal-class-properties": "^7.13.0",
+    "@babel/plugin-proposal-decorators": "^7.13.5",
+    "@babel/preset-env": "^7.13.10",
+    "@babel/preset-react": "^7.12.13",
+    "@babel/preset-typescript": "^7.13.0",
+    "@typescript-eslint/eslint-plugin": "^4.17.0",
+    "@typescript-eslint/parser": "^4.17.0",
+    "eslint": "^7.22.0",
+    "eslint-config-airbnb-base": "^14.2.1",
+    "eslint-config-prettier": "^8.1.0",
+    "eslint-formatter-pretty": "^4.0.0",
+    "eslint-plugin-babel": "^5.3.1",
+    "eslint-plugin-compat": "^3.9.0",
+    "eslint-plugin-eslint-comments": "^3.2.0",
+    "eslint-plugin-import": "^2.22.1",
+    "eslint-plugin-jest": "^24.3.1",
+    "eslint-plugin-jsx-a11y": "^6.4.1",
+    "eslint-plugin-markdown": "^2.0.0",
+    "eslint-plugin-promise": "^4.3.1",
+    "eslint-plugin-react": "^7.22.0",
+    "eslint-plugin-react-hooks": "^4.2.0",
+    "eslint-plugin-unicorn": "^28.0.2",
+    "fast-glob": "^3.2.5",
+    "prettier-plugin-style-order": "^0.2.2",
+    "stylelint": "^13.12.0",
+    "stylelint-config-css-modules": "^2.2.0",
+    "stylelint-config-prettier": "^8.0.2",
+    "stylelint-config-rational-order": "^0.1.2",
+    "stylelint-config-standard": "^21.0.0",
+    "stylelint-declaration-block-no-ignored-properties": "^2.3.0",
+    "stylelint-no-unsupported-browser-features": "^4.1.4",
+    "stylelint-order": "^4.1.0"
+  },
+  "devDependencies": {
+    "cross-env": "^7.0.3",
+    "np": "^7.4.0",
+    "prettier": "^2.2.1"
+},"keywords": [
+  "eslint",
+  "prettier"
+],
+"files": [
+  "dist"
+]
+}

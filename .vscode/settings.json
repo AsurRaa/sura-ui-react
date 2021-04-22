@@ -4,9 +4,12 @@
         "Raa's",
         "antd",
         "asurraa",
+        "compat",
         "craco",
         "draggable",
         "microbundle",
-        "peaceiris"
+        "peaceiris",
+        "stylelint",
+        "teamouy"
     ]
 }
