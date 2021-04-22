@@ -8,8 +8,8 @@
 
 <div align="center">
   
-  [![NPM](https://img.shields.io/npm/v/@asurraa/pm2-status-tele-bot.svg)](https://www.npmjs.com/package/@asurraa/pm2-status-tele-bot)
   [![lerna](https://img.shields.io/badge/maintained%20with-lerna-cc00ff.svg)](https://lerna.js.org/)
+  [![Storybook](https://cdn.jsdelivr.net/gh/storybookjs/brand@master/badge/badge-storybook.svg)](link to site)
   
   </div>
 <br>
