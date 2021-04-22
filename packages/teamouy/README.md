@@ -1,6 +1,6 @@
-[![NPM](https://img.shields.io/npm/v/@asurraa/teamouy.svg)](https://www.npmjs.com/package/@asurraa/teamouy)
+[![NPM](https://img.shields.io/npm/v/@asurraa/teamouy.svg)](https://www.npmjs.com/package/@asurraa/sura-ui-teamouy)
 
-# teamouy
+# @asurraa/sura-ui-teamouy
 
 A collection of configuration files containing prettier, eslint, stylelint.
 
@@ -9,13 +9,13 @@ A collection of configuration files containing prettier, eslint, stylelint.
 With NPM
 
 ```bash
-npm i -D @asurraa/teamouy
+npm i -D @asurraa/sura-ui-teamouy
 ```
 
 With yarn
 
 ```bash
-yarn add -D @asurraa/teamouy
+npm i -D @asurraa/sura-ui-teamouy
 ```
 
 # Use
