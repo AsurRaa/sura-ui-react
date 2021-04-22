@@ -23,9 +23,7 @@
     "@types/react": "^17.0.3",
     "@types/react-dom": "^17.0.3",
     "babel-loader": "^8.2.2",
-    "lerna": "^4.0.0",
-    "microbundle": "^0.13.0",
-    "microbundle-crl": "^0.13.10"
+    "lerna": "^4.0.0"
   },
   "scripts": {
     "storybook": "start-storybook -p 6006",

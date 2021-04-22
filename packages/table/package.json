@@ -15,8 +15,8 @@
     "react": "17.0.2"
   },
   "scripts": {
-    "build": "microbundle-crl --no-compress --format modern,cjs",
-    "start": "microbundle-crl watch --no-compress --format modern,cjs"
+    "dev": "tsc -w",
+    "start": "tsc"
   },
   "files": [
     "dist"
