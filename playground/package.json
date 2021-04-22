@@ -4,10 +4,12 @@
   "private": true,
   "dependencies": {
     "@asurraa/sura-ui-modal": "link: ../packages/modal",
+    "@asurraa/sura-ui-table": "link: ../packages/table",
     "@craco/craco": "^6.1.1",
     "antd": "link: ../",
     "react": "link: ../",
     "react-dom": "link: ../",
+    "react-scripts": "^4.0.3",
     "typescript": "link: ../",
     "web-vitals": "^1.0.1"
   },

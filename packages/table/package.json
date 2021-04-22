@@ -16,7 +16,7 @@
   },
   "scripts": {
     "dev": "tsc -w",
-    "start": "tsc"
+    "build": "tsc"
   },
   "files": [
     "dist"
