@@ -29,7 +29,7 @@ The combine series of components & utilities are placed here to support our deve
 |Components| Version |
 |--|--|
 | sura-table | ![npm package](https://img.shields.io/npm/v/@asurraa/sura-ui-table.svg?style=flat-square?style=flat-square) |
-|sura-modal| ![npm package](https://img.shields.io/npm/v/@asurraa/sura-ui-modal.svg?style=flat-square?style=flat-square)
+| sura-modal | ![npm package](https://img.shields.io/npm/v/@asurraa/sura-ui-modal.svg?style=flat-square?style=flat-square)
 
 
 ## More
