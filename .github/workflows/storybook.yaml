@@ -2,7 +2,7 @@ name: publish to storybook page
 on:
   push:
     branches:
-      - master
+      - build
 jobs:
   deploy:
     runs-on: ubuntu-18.04
