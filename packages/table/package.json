@@ -30,5 +30,6 @@
     "react-i18next": "^11.8.13",
     "styled-components": "^5.2.3",
     "uuid": "^8.3.2"
-  }
+  },
+  "gitHead": "5d92c9a0c1e69b7c4af6491c74d29fc35a3c7ea3"
 }

@@ -23,5 +23,6 @@
   ],
   "dependencies": {
     "ant-design-draggable-modal": "^1.0.0"
-  }
+  },
+  "gitHead": "5d92c9a0c1e69b7c4af6491c74d29fc35a3c7ea3"
 }
