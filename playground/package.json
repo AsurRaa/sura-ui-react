@@ -1,7 +1,6 @@
 {
   "name": "sura-ui-playground",
-  "version": "0.1.0",
-  "private": true,
+  "version": "0.0.0",
   "dependencies": {
     "@asurraa/sura-ui-modal": "link: ../packages/modal",
     "@asurraa/sura-ui-table": "link: ../packages/table",
