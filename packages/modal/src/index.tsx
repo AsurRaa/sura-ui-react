@@ -8,7 +8,7 @@ import "antd/dist/antd.css";
 import "ant-design-draggable-modal/dist/index.css";
 import { useTranslation } from "react-i18next";
 
-export interface AsurRaaModalProps extends DraggableModalProps {
+interface AsurRaaModalProps extends DraggableModalProps {
   onSubmitLoading?: boolean;
 }
 
@@ -32,4 +32,5 @@ const AsurRaaModal: FC<AsurRaaModalProps> = (props) => {
 export {
   DraggableModalProvider as AsurRaaDraggableModalProvider,
   AsurRaaModal,
+  AsurRaaModalProps
 };
