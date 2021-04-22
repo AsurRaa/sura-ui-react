@@ -20,9 +20,9 @@ The combine series of components & utilities are placed here to support our deve
 
 ## Features
 
-- **Typescript Support**
-- **Useful Components for business developments workflows**
-- **Extendable build on top antd and other powerful ui framworks**
+- **Typescript Support** : Support Typescript out of the box.
+- **Rich Business Components** :  for business developments workflows.
+- **Extendable** :  build on top antd and other powerful ui framworks.
 
 ## Component Kanban
 
