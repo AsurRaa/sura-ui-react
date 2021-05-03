@@ -94,25 +94,16 @@ module.exports = {
     "@typescript-eslint/no-empty-interface": "off",
     "no-empty-interface": "off",
   },
-  "settings": {
+  settings: {
     "import/resolver": {
-      "node": {
-        "extensions": [
-          ".js",
-          ".jsx",
-          ".ts",
-          ".tsx",
-          ".*"
-        ]
+      node: {
+        extensions: [".js", ".jsx", ".ts", ".tsx", ".*"],
       },
-      "typescript": {}
+      typescript: {},
     },
     "import/parsers": {
-      "@typescript-eslint/parser": [
-        ".ts",
-        ".tsx"
-      ]
+      "@typescript-eslint/parser": [".ts", ".tsx"],
     },
-  }
+  },
   ...parserOptions,
 };
