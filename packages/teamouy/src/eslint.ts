@@ -1,54 +1,20 @@
-import * as fs from "fs";
-import * as path from "path";
-
-const parserOptions = {
-  ecmaFeatures: {
-    jsx: true,
-  },
-  babelOptions: {
-    presets: [
-      "@babel/preset-env",
-      "@babel/preset-react",
-      "@babel/preset-typescript",
-    ],
-    plugins: [
-      ["@babel/plugin-proposal-decorators", { legacy: true }],
-      ["@babel/plugin-proposal-class-properties", { loose: true }],
-    ],
-  },
-  requireConfigFile: false,
-  project: "./tsconfig.json",
-};
-
-const isJsMoreTs = async (path = "src") => {
-  const fg = require("fast-glob");
-  const jsFiles = await fg(`${path}/src/**/*.{js,jsx}`, { deep: 3 });
-  const tsFiles = await fg(`${path}/src/**/*.{ts,tsx}`, { deep: 3 });
-  return jsFiles.length > tsFiles.length;
-};
-
-const isTsProject = fs.existsSync(
-  path.join(process.cwd() || ".", "./tsconfig.json")
-);
-
-if (isTsProject) {
-  try {
-    isJsMoreTs(process.cwd()).then((jsMoreTs) => {
-      if (!jsMoreTs) return;
-      console.log("For TS with tsconfig.json");
-    });
-  } catch (e) {
-    console.log(e);
-  }
-}
-
 module.exports = {
+  env: {
+    browser: true,
+    commonjs: true,
+    es6: true,
+    node: true,
+  },
   extends: [
     "eslint:recommended",
     "plugin:react/recommended",
     "plugin:import/errors",
     "plugin:@typescript-eslint/recommended",
   ],
+  globals: {
+    Atomics: "readonly",
+    SharedArrayBuffer: "readonly",
+  },
   parser: "@typescript-eslint/parser",
   parserOptions: {
     ecmaFeatures: {
@@ -59,16 +25,7 @@ module.exports = {
     sourceType: "module",
   },
   plugins: ["react", "react-hooks", "prettier"],
-  globals: {
-    Atomics: "readonly",
-    SharedArrayBuffer: "readonly",
-  },
-  env: {
-    browser: true,
-    commonjs: true,
-    es6: true,
-    node: true,
-  },
+
   rules: {
     indent: ["error", 2],
     quotes: ["warn", "double"],
@@ -105,5 +62,4 @@ module.exports = {
       "@typescript-eslint/parser": [".ts", ".tsx"],
     },
   },
-  ...parserOptions,
 };
