@@ -24,7 +24,7 @@ in `.eslintrc.js`
 
 ```js
 module.exports = {
-  extends: [require.resolve('@asurraa/teamouy/dist/eslint')],
+  extends: [require.resolve('@asurraa/sura-teamouy/dist/eslint')],
   rules: {
     // your rules
   },
@@ -35,7 +35,7 @@ in `.stylelintrc.js`
 
 ```js
 module.exports = {
-  extends: [require.resolve('@asurraa/teamouy/dist/stylelint')],
+  extends: [require.resolve('@asurraa/sura-teamouy/dist/stylelint')],
   rules: {
     // your rules
   },
@@ -45,7 +45,7 @@ module.exports = {
 in `.prettierrc.js`
 
 ```js
-const teamouy = require('@asurraa/teamouy');
+const teamouy = require('@asurraa/sura-teamouy');
 
 module.exports = {
   ...teamouy.prettier,
