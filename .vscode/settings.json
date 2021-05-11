@@ -10,6 +10,7 @@
         "microbundle",
         "peaceiris",
         "stylelint",
-        "teamouy"
+        "teamouy",
+        "vfile"
     ]
 }

@@ -1,16 +1,15 @@
- [![Storybook](https://cdn.jsdelivr.net/gh/storybookjs/brand@master/badge/badge-storybook.svg)](https://asurraa.github.io/sura-ui/)
- 
-# @asurraa/sura-ui-table 
-> Extendable on top of AntdTable with mutiple functional and use Internally at AsuRaa.
+[![Storybook](https://cdn.jsdelivr.net/gh/storybookjs/brand@master/badge/badge-storybook.svg)](https://asurraa.github.io/sura-ui/)
+
+# @asurraa/sura-ui-table
+
+> Extendable on top of AntdTable with multiple functional and use Internally at AsuRaa.
 
 ```sh
 yarn add @asurraa/sura-ui-table
 ```
 
+## Example
 
-
-
-## Example 
 ```ts
 import { Tag } from "antd";
 import React from "react";
@@ -82,7 +81,7 @@ const ServicesPage = () => {
           onClick: () => refreshProductServices(),
         }}
         deleteActionButton={(props) => ({
-          
+
           onOk: () => //console.log("props with delete", props),
         })}
         asurRaaColumnProps={column}
@@ -94,4 +93,3 @@ const ServicesPage = () => {
 
 export default ServicesPage;
 ```
-
