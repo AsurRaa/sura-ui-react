@@ -8,6 +8,7 @@
 
 <div align="center">
   
+  ![npm package](https://img.shields.io/npm/v/@asurraa/sura-ui.svg?style=flat-square?style=flat-square)
   [![lerna](https://img.shields.io/badge/maintained%20with-lerna-cc00ff.svg)](https://lerna.js.org/)
   [![Storybook](https://cdn.jsdelivr.net/gh/storybookjs/brand@master/badge/badge-storybook.svg)](https://asurraa.github.io/sura-ui/)
   
@@ -18,6 +19,13 @@
 
 The combine series of components & utilities are placed here to support our developments workflows.
 
+## Installation 
+```bash
+yarn add @asurraa/sura-ui
+//or 
+npm install @asurraa/sura-ui
+```
+
 ## Features
 
 - **Typescript Support** : Support Typescript out of the box.
@@ -26,7 +34,7 @@ The combine series of components & utilities are placed here to support our deve
 
 
 
-## Components List 
+## Components List as monorepo
 |Components| Version |Description|
 |--|--|--|
 | [sura-table](https://github.com/asurraa/sura-ui/tree/master/packages/table) | ![npm package](https://img.shields.io/npm/v/@asurraa/sura-ui-table.svg?style=flat-square?style=flat-square)|Extended Antd Table with many functions.| 
