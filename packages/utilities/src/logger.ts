@@ -1,5 +1,5 @@
 /* eslint-disable indent */
-import { isProductionModeFunc } from "./IsProductionMode";
+import { isProductionModeFunc } from "./isProductionMode";
 type Color = "#FFFFFF" | "#FF0000" | "#0000FF";
 
 export class Logger {

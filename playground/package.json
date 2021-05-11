@@ -1,9 +1,18 @@
 {
   "name": "sura-ui-playground",
+  "author": "@asurraa",
   "version": "0.0.0",
+  "license": "MIT",
+  "scripts": {
+    "start": "craco start",
+    "dev": "yarn start",
+    "build": "craco build",
+    "test": "craco test"
+  },
   "dependencies": {
     "@asurraa/sura-ui-modal": "link: ../packages/modal",
     "@asurraa/sura-ui-table": "link: ../packages/table",
+    "@asurraa/sura-ui-utilities": "link: ../packages/utilities",
     "@craco/craco": "^6.1.1",
     "antd": "link: ../",
     "react": "link: ../",
@@ -22,11 +31,7 @@
     "@types/react-dom": "link: ../",
     "craco-less": "^1.17.1"
   },
-  "scripts": {
-    "start": "craco start",
-    "build": "craco build",
-    "test": "craco test"
-  },
+ 
   "eslintConfig": {
     "extends": [
       "react-app",
