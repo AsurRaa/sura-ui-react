@@ -41,6 +41,9 @@ npm install @asurraa/sura-ui
 | [sura-modal](https://github.com/asurraa/sura-ui/tree/master/packages/modal) | ![npm package](https://img.shields.io/npm/v/@asurraa/sura-ui-modal.svg?style=flat-square?style=flat-square)|Drag and Drop Modal.|
 | [sura-teamouy](https://github.com/asurraa/sura-ui/tree/master/packages/teamouy) |![npm package](https://img.shields.io/npm/v/@asurraa/sura-ui-teamouy.svg?style=flat-square?style=flat-square)|Configuration based.|
 | [sura-utilities](https://github.com/asurraa/sura-ui/tree/master/packages/utilities) |![npm package](https://img.shields.io/npm/v/@asurraa/sura-ui-utilities.svg?style=flat-square?style=flat-square)|Utilities packages and functions.|
+| [sura-upload](https://github.com/asurraa/sura-ui/tree/master/packages/upload) |![npm package](https://img.shields.io/npm/v/@asurraa/sura-ui-upload.svg?style=flat-square?style=flat-square)|Upload wrapper.|
+
+
 
 
 
