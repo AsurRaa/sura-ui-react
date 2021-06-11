@@ -5,7 +5,8 @@
   "license": "MIT",
   "scripts": {
     "start": "craco start",
-    "dev": "yarn start",
+    "start:build:package": "sh scripts/build-all.sh && yarn start", 
+    "start:dev:package": "sh scripts/dev-all.sh && yarn start", 
     "build": "craco build",
     "test": "craco test"
   },
