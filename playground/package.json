@@ -14,6 +14,7 @@
     "@asurraa/sura-ui-modal": "link: ../packages/modal",
     "@asurraa/sura-ui-table": "link: ../packages/table",
     "@asurraa/sura-ui-utilities": "link: ../packages/utilities",
+    "@asurraa/sura-ui-upload": "link: ../packages/upload",
     "@craco/craco": "^6.1.1",
     "antd": "link: ../",
     "react": "link: ../",

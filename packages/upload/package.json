@@ -1,7 +1,7 @@
 {
   "name": "@asurraa/sura-ui-upload",
   "version": "1.0.0",
-  "description": "Text Wrapper",
+  "description": "Upload Wrapper",
   "author": "@asurraa",
   "license": "MIT",
   "main": "dist/index.js",
@@ -17,6 +17,9 @@
   "files": [
     "dist"
   ],
+  "dependencies": {
+    "antd-img-crop": "^3.14.1"
+  },
   "devDependencies": {
     "@types/vfile-message": "^2.0.0"
   }

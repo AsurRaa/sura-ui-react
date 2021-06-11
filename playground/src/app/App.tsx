@@ -2,13 +2,18 @@ import "../styles/App.less";
 import {
   AsurRaaModal,
   AsurRaaDraggableModalProvider,
+  AsurRaaModalProps,
 } from "@asurraa/sura-ui-modal";
 import { Button } from "antd";
-import { useState } from "react";
-import { Logger } from "@asurraa/sura-ui-utilities";
+import { FC, useState } from "react";
+
+const AnotherCustomModal: FC<AsurRaaModalProps> = (props) => {
+  return <AsurRaaModal {...props} />;
+};
+
 function App() {
   const [state, setState] = useState<boolean>(false);
-  Logger.log("Hi");
+
   return (
     <div className="App">
       <header className="App-header">Playground</header>
@@ -16,7 +21,7 @@ function App() {
 
       <div>
         <AsurRaaDraggableModalProvider>
-          <AsurRaaModal
+          <AnotherCustomModal
             title={"Test Modal"}
             onCancel={() => setState(false)}
             visible={state}

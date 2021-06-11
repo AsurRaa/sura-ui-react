@@ -1,21 +1,28 @@
-import { FC, useEffect, useState } from "react";
 import { Upload } from "antd";
 import ImgCrop, { ImgCropProps } from "antd-img-crop";
-import { REST_URI_ENUM } from "../../constants/rest-uri.constant";
-import { BASE_API_URL } from "../../configs/global.config";
 import { UploadFile, UploadProps } from "antd/lib/upload/interface";
-import { uploadInterface } from "@src/interface";
-import { getReturnSingleImageFromServer } from "@src/utilities/returnImageFromServer";
+import React from "react";
+import { FC, useEffect, useState } from "react";
+import { useGetProviderAsurRaaUpload } from "./AsurRaaUploadProvider";
 
 export interface AsurRaaSingleUploadProps extends UploadProps {
   getReturnUrl?: (url: any) => void;
   defaultImage?: string | null | undefined;
   corpProps?: ImgCropProps;
 }
+export interface uploadInterface {
+  uuid: string;
+  cdn: string;
+}
 
-export const AsurRaaSingleUpload: FC<AsurRaaSingleUploadProps> = (props) => {
-  const postUrl = `${BASE_API_URL}${REST_URI_ENUM.UPLOAD_SINGLE_IMAGE}`;
-  const token = localStorage.getItem("token");
+export const useFetReturnSingleImageFromServer = (uuid: string | undefined) => {
+  const global = useGetProviderAsurRaaUpload();
+  const fullUrl = `${global?.returnImagePath}${uuid}`;
+  return fullUrl;
+};
+
+const AsurRaaSingleUpload: FC<AsurRaaSingleUploadProps> = (props) => {
+  const global = useGetProviderAsurRaaUpload();
   const [fileList, setFileList] = useState<Array<UploadFile<uploadInterface>>>(
     []
   );
@@ -32,7 +39,7 @@ export const AsurRaaSingleUpload: FC<AsurRaaSingleUploadProps> = (props) => {
             props.defaultImage === undefined ||
             props.defaultImage === ""
               ? undefined
-              : getReturnSingleImageFromServer(props.defaultImage),
+              : useFetReturnSingleImageFromServer(props.defaultImage),
           size: 100,
           type: "",
           // @ts-ignore
@@ -73,10 +80,9 @@ export const AsurRaaSingleUpload: FC<AsurRaaSingleUploadProps> = (props) => {
     <div>
       <ImgCrop rotate {...props.corpProps}>
         <Upload
-          action={postUrl}
+          action={global?.postUrl}
           headers={{
-            // @ts-ignore
-            authorization: `Bearer ${token}`,
+            ...global?.header,
           }}
           listType="picture-card"
           // @ts-ignore
@@ -90,3 +96,5 @@ export const AsurRaaSingleUpload: FC<AsurRaaSingleUploadProps> = (props) => {
     </div>
   );
 };
+
+export default AsurRaaSingleUpload;
