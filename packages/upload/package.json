@@ -1,5 +1,5 @@
 {
-  "name": "@asurraa/sura-ui-text",
+  "name": "@asurraa/sura-ui-upload",
   "version": "1.0.0",
   "description": "Text Wrapper",
   "author": "@asurraa",
@@ -17,9 +17,6 @@
   "files": [
     "dist"
   ],
-  "dependencies": {
-    "antd-img-crop": "^3.14.1"
-  },
   "devDependencies": {
     "@types/vfile-message": "^2.0.0"
   }
