@@ -1,8 +1,4 @@
-import {
-  AsurRaaSingleUploadProps,
-  useFetReturnSingleImageFromServer,
-  uploadInterface,
-} from "./AsurRaaUpload";
+import { AsurRaaSingleUploadProps, uploadInterface } from "./AsurRaaUpload";
 import {
   AsurRaaUploadContext,
   AsurRaaUploadProvider,
@@ -13,6 +9,5 @@ export {
   uploadInterface,
   AsurRaaUploadContext,
   AsurRaaUploadProvider,
-  useFetReturnSingleImageFromServer as getReturnSingleImageFromServer,
   useGetProviderAsurRaaUpload,
 };

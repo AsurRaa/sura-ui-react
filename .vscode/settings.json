@@ -10,6 +10,7 @@
         "draggable",
         "microbundle",
         "peaceiris",
+        "prebuild",
         "stylelint",
         "teamouy",
         "vfile"
