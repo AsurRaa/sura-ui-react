@@ -17,8 +17,5 @@
   },
   "files": [
     "dist"
-  ],
-  "devDependencies": {
-    "@types/vfile-message": "^2.0.0"
-  }
+  ]
 }
