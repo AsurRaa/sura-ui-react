@@ -5,6 +5,7 @@
   "main": "dist/index.js",
   "module": "dist/index.modern.js",
   "source": "src/index.tsx",
+  "private": "true",
   "repository": {
     "type": "git",
     "license": "MIT",
@@ -20,6 +21,7 @@
     "storybook": "start-storybook -p 6006",
     "build-storybook": "build-storybook",
     "build": "lerna run build --stream",
+    "build-order": "yarn lerna run build --include-dependencies --stream",
     "dev": "lerna run dev --stream",
     "package-publish": "yarn lerna publish from-package"
   },
