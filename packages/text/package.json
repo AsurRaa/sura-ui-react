@@ -1,6 +1,6 @@
 {
   "name": "@asurraa/sura-ui-text",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Text Wrapper",
   "author": "@asurraa",
   "license": "MIT",
@@ -16,11 +16,5 @@
   },
   "files": [
     "dist"
-  ],
-  "dependencies": {
-    "antd-img-crop": "^3.14.1"
-  },
-  "devDependencies": {
-    "@types/vfile-message": "^2.0.0"
-  }
+  ]
 }
