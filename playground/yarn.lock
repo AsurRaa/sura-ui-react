@@ -10,6 +10,10 @@
   version "0.0.0"
   uid ""
 
+"@asurraa/sura-ui-rich-text-editor@link: ../packages/rich-text-editor":
+  version "0.0.0"
+  uid ""
+
 "@asurraa/sura-ui-table@link: ../packages/table":
   version "0.0.0"
   uid ""

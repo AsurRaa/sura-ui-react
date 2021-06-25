@@ -4,9 +4,7 @@ import App from "./App";
 const AppProvider = () => {
   return (
     <Fragment>
-      {/* <AsurRaaUploadProvider> */}
       <App />
-      {/* </AsurRaaUploadProvider> */}
     </Fragment>
   );
 };
