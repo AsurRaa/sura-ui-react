@@ -21,7 +21,7 @@ export const useFetReturnSingleImageFromServer = (uuid: string | undefined) => {
   return fullUrl;
 };
 
-const AsurRaaSingleUpload: FC<AsurRaaSingleUploadProps> = (props) => {
+export const AsurRaaSingleUpload: FC<AsurRaaSingleUploadProps> = (props) => {
   const global = useGetProviderAsurRaaUpload();
   const [fileList, setFileList] = useState<Array<UploadFile<uploadInterface>>>(
     []
@@ -96,5 +96,3 @@ const AsurRaaSingleUpload: FC<AsurRaaSingleUploadProps> = (props) => {
     </div>
   );
 };
-
-export default AsurRaaSingleUpload;
