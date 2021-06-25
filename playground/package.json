@@ -5,8 +5,8 @@
   "license": "MIT",
   "scripts": {
     "start": "craco start",
-    "start:build:package": "sh scripts/build-all.sh && yarn start", 
-    "start:dev:package": "sh scripts/dev-all.sh && yarn start", 
+    "start:build:package": "sh scripts/build-all.sh && yarn start",
+    "start:dev:package": "sh scripts/dev-all.sh && yarn start",
     "build": "craco build",
     "test": "craco test"
   },
@@ -15,6 +15,7 @@
     "@asurraa/sura-ui-table": "link: ../packages/table",
     "@asurraa/sura-ui-utilities": "link: ../packages/utilities",
     "@asurraa/sura-ui-upload": "link: ../packages/upload",
+    "@asurraa/sura-ui-modal-payment": "link: ../packages/modal-payment",
     "@craco/craco": "^6.1.1",
     "antd": "link: ../",
     "react": "link: ../",
@@ -33,7 +34,6 @@
     "@types/react-dom": "link: ../",
     "craco-less": "^1.17.1"
   },
- 
   "eslintConfig": {
     "extends": [
       "react-app",

@@ -2,6 +2,10 @@
 # yarn lockfile v1
 
 
+"@asurraa/sura-ui-modal-payment@link: ../packages/modal-payment":
+  version "0.0.0"
+  uid ""
+
 "@asurraa/sura-ui-modal@link: ../packages/modal":
   version "0.0.0"
   uid ""
