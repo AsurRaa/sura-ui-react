@@ -4,10 +4,7 @@ export {
   useGetProviderAsurRaaUpload,
 } from "./AsurRaaUploadProvider";
 
-export {
-  useGetReturnSingleImageFromServer,
-  AsurRaaSingleUpload,
-} from "./AsurRaaUpload";
+export { AsurRaaSingleUpload } from "./AsurRaaUpload";
 
 export type {
   AsurRaaSingleUploadProps,

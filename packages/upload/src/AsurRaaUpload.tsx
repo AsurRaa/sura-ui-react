@@ -15,18 +15,12 @@ export interface uploadInterface {
   cdn: string;
 }
 
-export const useGetReturnSingleImageFromServer = (uuid: string | undefined) => {
-  const global = useGetProviderAsurRaaUpload();
-  const fullUrl = `${global?.returnImagePath}${uuid}`;
-  return fullUrl;
-};
-
 export const AsurRaaSingleUpload: FC<AsurRaaSingleUploadProps> = (props) => {
   const global = useGetProviderAsurRaaUpload();
   const [fileList, setFileList] = useState<Array<UploadFile<uploadInterface>>>(
     []
   );
-  const imageUrl = useGetReturnSingleImageFromServer(props?.defaultImage ?? "");
+  const imageUrl = `${global?.returnImagePath}${props?.defaultImage}`;
 
   useEffect(() => {
     if (props.defaultImage !== undefined) {
