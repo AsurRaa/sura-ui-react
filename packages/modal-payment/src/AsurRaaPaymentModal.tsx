@@ -1,7 +1,7 @@
 /* eslint-disable @typescript-eslint/no-non-null-assertion */
 import React from "react";
 import { LoadingOutlined } from "@ant-design/icons";
-import { fixNumberFunc } from "../../utilities/src/number-separator";
+import { fixNumberFunc } from "@asurraa/sura-ui-utilities";
 import { useDebounceFn } from "ahooks";
 import { Button, Divider, Radio, Typography } from "antd";
 import { FC, Fragment, useEffect, useMemo, useState } from "react";
@@ -151,7 +151,7 @@ export const AsurRaaPaymentModal: FC<AsurRaaPaymentModalProps> = (props) => {
       >
         <div style={{ height: 150 }}>
           <AsurRaaRichTextEditor
-            onChange={(value) => {
+            onChange={(value: React.SetStateAction<string | undefined>) => {
               setNoteState(value);
             }}
           />
