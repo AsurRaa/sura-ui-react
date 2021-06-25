@@ -1,9 +1,9 @@
 /* eslint-disable indent */
 /* eslint-disable no-case-declarations */
-import React, { FC, useEffect } from "react";
 import "./css/example.css";
 import "./css/draft.css";
 import "./css/rich.css";
+import React, { FC, useEffect } from "react";
 import { Editor, EditorState, RichUtils, getDefaultKeyBinding } from "draft-js";
 import { convertToHTML, convertFromHTML } from "draft-convert";
 const { useState, useRef, useCallback } = React;
