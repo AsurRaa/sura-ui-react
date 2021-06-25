@@ -8,10 +8,7 @@ import { FC, Fragment, useEffect, useMemo, useState } from "react";
 import { useTranslation } from "react-i18next";
 import { AsurRaaInputMoney } from "@asurraa/sura-ui-input-money";
 import { InputHeader } from "@asurraa/sura-ui-common-styles";
-import {
-  AsurRaaModal,
-  AsurRaaModalProps,
-} from "@asurraa/sura-ui-modal/src/index";
+import { AsurRaaModal, AsurRaaModalProps } from "@asurraa/sura-ui-modal";
 import { AsurRaaRichTextEditor } from "@asurraa/sura-ui-rich-text-editor";
 import { useGetAsurRaaPaymentModal } from "./AsurRaaPaymentModalProvider";
 

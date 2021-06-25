@@ -1,4 +1,2 @@
-export {
-  AsurRaaInputMoney,
-  AsurRaaInputNumberProps,
-} from "./AsurRaaInputMoney";
+export { AsurRaaInputMoney } from "./AsurRaaInputMoney";
+export type { AsurRaaInputNumberProps } from "./AsurRaaInputMoney";

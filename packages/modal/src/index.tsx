@@ -1,5 +1,3 @@
-export {
-  AsurRaaDraggableModalProvider,
-  AsurRaaModal,
-  AsurRaaModalProps,
-} from "./AsurRaaModal";
+export { AsurRaaDraggableModalProvider, AsurRaaModal } from "./AsurRaaModal";
+
+export type { AsurRaaModalProps } from "./AsurRaaModal";

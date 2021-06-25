@@ -27,9 +27,9 @@ export const AsurRaaRichTextEditor: FC<AsurRaaRichTextEditorProps> = (
 
   useEffect(() => {
     if (props.defaultValue !== undefined && props.defaultValue !== null) {
-      const editorState = EditorState.createWithContent(
+      const editorState = EditorState?.createWithContent(
         // @ts-ignore
-        convertFromHTML(props.defaultValue)
+        convertFromHTML(props?.defaultValue)
       );
       setEditorState(editorState);
     }

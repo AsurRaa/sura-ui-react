@@ -5,9 +5,9 @@ import {
   useGetProviderAsurRaaUpload,
 } from "./AsurRaaUploadProvider";
 export {
-  AsurRaaSingleUploadProps,
-  uploadInterface,
   AsurRaaUploadContext,
   AsurRaaUploadProvider,
   useGetProviderAsurRaaUpload,
 };
+
+export type { AsurRaaSingleUploadProps, uploadInterface };

@@ -1,12 +1,13 @@
-export {
+export { AsurRaaPaymentModal } from "./AsurRaaPaymentModal";
+export type {
   AsurRaaPaymentModalProps,
   callBackPayEssentialValueType,
-  AsurRaaPaymentModal,
 } from "./AsurRaaPaymentModal";
+
+export type { AsurRaaPaymentModalContextInterface } from "./AsurRaaPaymentModalProvider";
 
 export {
   AsurRaaPaymentModalContext,
-  AsurRaaPaymentModalContextInterface,
   AsurRaaPaymentModalProvider,
   useGetAsurRaaPaymentModal,
 } from "./AsurRaaPaymentModalProvider";
