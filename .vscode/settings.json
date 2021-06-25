@@ -14,6 +14,7 @@
         "prebuild",
         "stylelint",
         "teamouy",
-        "vfile"
+        "vfile",
+        "yarnpkg"
     ]
 }

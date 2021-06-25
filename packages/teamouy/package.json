@@ -7,7 +7,6 @@
   "main": "dist/index.js",
   "module": "dist/index.modern.js",
   "source": "src/index.tsx",
- 
   "scripts": {
     "prebuild": "rimraf dist",
     "dev": "yarn prebuild && tsc -w",
@@ -56,11 +55,12 @@
     "cross-env": "^7.0.3",
     "np": "^7.4.0",
     "prettier": "^2.2.1"
-},"keywords": [
-  "eslint",
-  "prettier"
-],
-"files": [
-  "dist"
-]
+  },
+  "keywords": [
+    "eslint",
+    "prettier"
+  ],
+  "files": [
+    "dist"
+  ]
 }

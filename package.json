@@ -10,7 +10,6 @@
     "license": "MIT",
     "url": "https://github.com/asurraa/sura-ui.git"
   },
-  "private": "true",
   "homepage": "https://github.com/asurraa/sura-ui",
   "workspaces": {
     "packages": [
