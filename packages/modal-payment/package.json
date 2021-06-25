@@ -17,7 +17,7 @@
   "scripts": {
     "prebuild": "rimraf dist",
     "dev": "yarn prebuild && tsc -w",
-    "build": "tsc"
+    "build": "tsc --build tsconfig.json"
   },
   "files": [
     "dist"
