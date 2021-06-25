@@ -1,7 +1,7 @@
 /* eslint-disable @typescript-eslint/no-non-null-assertion */
 import React from "react";
 import { LoadingOutlined } from "@ant-design/icons";
-import { fixNumberFunc } from "@asurraa/sura-ui-utilities";
+import { fixNumberFunc } from "./utils/fix-number";
 import { useDebounceFn } from "ahooks";
 import { Button, Divider, Radio, Typography } from "antd";
 import { FC, Fragment, useEffect, useMemo, useState } from "react";
