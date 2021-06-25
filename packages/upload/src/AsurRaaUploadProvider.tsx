@@ -4,7 +4,7 @@ import { createContext, FC, useContext } from "react";
 
 interface AsurRaaUploadContextType {
   postUrl: string;
-  returnImagePath: string;
+  returnImagePath: string | undefined;
   header: HttpRequestHeader;
 }
 

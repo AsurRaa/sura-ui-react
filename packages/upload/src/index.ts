@@ -5,7 +5,7 @@ export {
 } from "./AsurRaaUploadProvider";
 
 export {
-  useFetReturnSingleImageFromServer,
+  useGetReturnSingleImageFromServer,
   AsurRaaSingleUpload,
 } from "./AsurRaaUpload";
 
