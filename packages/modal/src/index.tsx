@@ -1,28 +1,32 @@
 import React, { FC, Fragment } from "react";
 import {
   DraggableModal,
-  DraggableModalProvider,
   DraggableModalProps,
+  DraggableModalProvider,
 } from "ant-design-draggable-modal";
-import "antd/dist/antd.css";
 import "ant-design-draggable-modal/dist/index.css";
+import "antd/dist/antd.css";
 import { useTranslation } from "react-i18next";
 
-interface AsurRaaModalProps extends DraggableModalProps {
-  onSubmitLoading?: boolean;
+export interface AsurRaaModalProps extends DraggableModalProps {
+  isSubmitLoading?: boolean;
 }
 
 const AsurRaaModal: FC<AsurRaaModalProps> = (props) => {
   const { t } = useTranslation();
+
   return (
     <Fragment>
       <DraggableModal
+        destroyOnClose={true}
         keyboard={false}
         initialWidth={500}
         initialHeight={750}
-        okText={<p>{t("ok")}</p>}
-        cancelText={<p>{t("cancel")}</p>}
-        okButtonProps={{ loading: props.onSubmitLoading }}
+        okText={t("ok")}
+        cancelText={t("Cancel")}
+        okButtonProps={{
+          loading: props.isSubmitLoading,
+        }}
         {...props}
       />
     </Fragment>
@@ -32,5 +36,4 @@ const AsurRaaModal: FC<AsurRaaModalProps> = (props) => {
 export {
   DraggableModalProvider as AsurRaaDraggableModalProvider,
   AsurRaaModal,
-  AsurRaaModalProps
 };
