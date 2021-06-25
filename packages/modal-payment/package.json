@@ -1,10 +1,10 @@
 {
-  "name": "@asurraa/sura-ui-modal",
-  "version": "1.1.3",
-  "description": "asurraa modal component",
+  "name": "@asurraa/sura-ui-modal-payment",
+  "version": "1.1.0",
+  "description": "asurraa modal payment component",
   "author": "@asurraa",
   "license": "MIT",
-  "repository": "https://github.com/asurraa/sura-ui/tree/master/packages/modal",
+  "repository": "https://github.com/asurraa/sura-ui/tree/master/packages/modal-payment",
   "main": "dist/index.js",
   "module": "dist/index.modern.js",
   "source": "src/index.tsx",
@@ -22,8 +22,6 @@
   "files": [
     "dist"
   ],
-  "dependencies": {
-    "ant-design-draggable-modal": "^1.0.0"
-  },
+  "dependencies": {},
   "gitHead": "40c6a44c698b1165844808ba59f08b2260db44a8"
 }

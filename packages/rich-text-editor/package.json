@@ -1,10 +1,10 @@
 {
-  "name": "@asurraa/sura-ui-modal",
-  "version": "1.1.3",
-  "description": "asurraa modal component",
+  "name": "@asurraa/sura-ui-rich-text-editor",
+  "version": "1.1.0",
+  "description": "asurraa rich-text-editor",
   "author": "@asurraa",
   "license": "MIT",
-  "repository": "https://github.com/asurraa/sura-ui/tree/master/packages/modal",
+  "repository": "https://github.com/asurraa/sura-ui/tree/master/packages/rich-text-editor",
   "main": "dist/index.js",
   "module": "dist/index.modern.js",
   "source": "src/index.tsx",
@@ -23,7 +23,12 @@
     "dist"
   ],
   "dependencies": {
-    "ant-design-draggable-modal": "^1.0.0"
+    "draft-js": "^0.11.7",
+    "draft-convert": "^2.1.11"
+  },
+  "devDependencies": {
+    "@types/draft-js": "^0.11.3",
+    "@types/draft-convert": "^2.1.3"
   },
   "gitHead": "40c6a44c698b1165844808ba59f08b2260db44a8"
 }

@@ -1,4 +1,4 @@
 import { Logger } from "./logger";
 import { isProductionModeFunc } from "./isProductionMode";
-
-export { Logger, isProductionModeFunc };
+import { fixNumberFunc } from "./number-separator";
+export { Logger, isProductionModeFunc, fixNumberFunc };
