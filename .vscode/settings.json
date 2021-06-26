@@ -14,9 +14,11 @@
         "microbundle",
         "peaceiris",
         "prebuild",
+        "reactcss",
         "stylelint",
         "teamouy",
         "vfile",
+        "voca",
         "yarnpkg"
     ]
 }
