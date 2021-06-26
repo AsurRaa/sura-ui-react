@@ -8,7 +8,6 @@ const Center = styled.div`
   display: flex;
   justify-content: center;
 `;
-
 export interface AsurRaaSaleCardProps {
   antdCardProps?: CardProps;
   imageValue: string | undefined;

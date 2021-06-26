@@ -9,6 +9,7 @@
   "source": "src/index.tsx",
   "scripts": {
     "dev": "tsc -w",
+    "prebuild": "rimraf dist",
     "build": "tsc --build tsconfig.json",
     "deps": "yarn upgrade-interactive --latest",
     "prepublish": "yarn build",
@@ -17,5 +18,5 @@
   "files": [
     "dist"
   ],
-  "gitHead": "55a36d4a7dfd00f933176d456df19773938bda7c"
+  "gitHead": "5d2a1ab3c7d795000fcd0f92471edee47cf1b497"
 }
