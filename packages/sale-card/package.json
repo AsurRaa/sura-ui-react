@@ -1,6 +1,6 @@
 {
   "name": "@asurraa/sura-ui-sale-card",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "sale-card",
   "author": "@asurraa",
   "license": "MIT",
@@ -9,6 +9,7 @@
   "source": "src/index.tsx",
   "scripts": {
     "dev": "tsc -w",
+    "prebuild": "rimraf dist",
     "build": "tsc --build tsconfig.json",
     "deps": "yarn upgrade-interactive --latest",
     "prepublish": "yarn build",
