@@ -1,73 +1,90 @@
-import { Fragment, useEffect, useState } from "react";
-import axios from "axios";
-import { Select, SelectProps } from "antd";
-import { AxiosResponse } from "axios";
-import styled from "styled-components";
+/* eslint-disable indent */
 import {
   Loading3QuartersOutlined,
   LoadingOutlined,
   PlusOutlined,
 } from "@ant-design/icons";
-import React from "react";
+import { message, Select, SelectProps } from "antd";
+import { AxiosResponse } from "axios";
+import React, { Fragment, ReactNode, useEffect, useState } from "react";
+import { useTranslation } from "react-i18next";
+import styled from "styled-components";
+import voca from "voca";
+import { useGetConfigAsuRaaSelectBaseApi } from "./AsurRaaSelectBaseApiProvider";
 
 /**
- * @author @lyhourchhen
+ * @author lyhourchhen
  * @see [@AsurRaa](https://asurraa.com)
  * @date 2021
  * @components SelectSearchBaseApi
  * @description  search and infinite scrolling for select from api.
+ * @stage beta
  */
 
+export interface AsurRaaSelectSearchBaserApiMetaInterface {
+  currentPage: number;
+  itemCount: number;
+  itemsPerPage: number;
+  totalItems: number;
+  totalPages: number;
+}
 export interface AsurRaaSelectSearchBaseApiProps<T> extends SelectProps<any> {
   uriData: string;
   onSelectExtend?: (value: T) => void;
-  refreshButtonProps?: React.DetailedHTMLProps<
-    React.HTMLAttributes<HTMLDivElement>,
-    HTMLDivElement
-  >;
   addButtonProps?: React.DetailedHTMLProps<
     React.HTMLAttributes<HTMLDivElement>,
     HTMLDivElement
   >;
+  showTriggerRefresh?: boolean;
   valueRender: Array<keyof T>;
+  renderValueExtra?: (propsData: T) => ReactNode | string;
 }
 
 export const AsurRaaSelectSearchBaseApi = <T extends { id: number }>(
   props: AsurRaaSelectSearchBaseApiProps<T>
 ) => {
+  const global = useGetConfigAsuRaaSelectBaseApi();
+  const { t } = useTranslation();
   const [dataState, setDataState] = useState<Array<T>>([]);
   const [page, setPage] = useState<number>(1);
   const [search, setSearch] = useState<string>();
   const [loading, setLoading] = useState<boolean>(false);
-  const [meta, setMeta] = useState<{
-    currentPage: number;
-    itemCount: number;
-    itemsPerPage: number;
-    totalItems: number;
-    totalPages: number;
-  }>({
+  const [meta, setMeta] = useState<AsurRaaSelectSearchBaserApiMetaInterface>({
     currentPage: 1,
     itemCount: 1,
     itemsPerPage: 10,
     totalItems: 1,
     totalPages: 1,
   });
-  const searchParam = search === undefined ? "" : `&filter=${search}`;
+  const pageParam = global?.uri.page;
+  const searchParam = global?.uri.search;
+  const searchParamInput =
+    search === undefined ? "" : `&${searchParam}=${search}`;
+  const baseUriRoute = `${props.uriData}?${pageParam}=${page}${searchParamInput}`;
+
   useEffect(() => {
-    const url = `${props.uriData}?page=${page}${searchParam}`;
-    axios.get(url).then((res: AxiosResponse<any>) => {
-      setDataState(res.data.items);
-      setMeta(res.data.meta);
+    global?.fetcher.get(baseUriRoute).then((res: AxiosResponse<any>) => {
+      const data = global?.parseResponse?.data(res);
+      const meta = global?.parseResponse?.meta(res);
+
+      setDataState(data);
+      setMeta(meta);
     });
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [search]);
 
   const fetcher = () => {
-    axios
-      .get(`${props.uriData}?page=${page}${searchParam}`)
-      .then((res: AxiosResponse<any>) => {
-        setDataState([...dataState, ...res.data.items]);
-      });
+    global?.fetcher.get(baseUriRoute).then((res: AxiosResponse<any>) => {
+      const data = global?.parseResponse?.data(res);
+      setDataState([...dataState, ...data]);
+    });
+  };
+
+  const refreshFetcher = () => {
+    global?.fetcher.get(baseUriRoute).then((res: AxiosResponse<any>) => {
+      const data = global?.parseResponse?.data(res);
+      setDataState([...data]);
+    });
   };
 
   const onScroll = (event: any) => {
@@ -93,6 +110,7 @@ export const AsurRaaSelectSearchBaseApi = <T extends { id: number }>(
         }}
       >
         <Select
+          placeholder={"Select or search"}
           filterOption={false}
           showSearch={true}
           onSearch={(value) => {
@@ -109,19 +127,23 @@ export const AsurRaaSelectSearchBaseApi = <T extends { id: number }>(
           ) : (
             <Fragment>
               {dataState?.map((data, arrayIndex) => {
+                const arrayTextRight = props?.valueRender?.map?.((value) => {
+                  return dataState[arrayIndex][value];
+                });
+                const textRight = voca.replace(arrayTextRight + "", ",", " ");
+
                 return (
                   <Select.Option value={data.id} key={arrayIndex}>
                     <div
-                      style={{ display: "flex" }}
-                      onClick={() => props.onSelectExtend?.(data)}
+                      style={{
+                        display: "flex",
+                        justifyContent: "space-between",
+                      }}
                     >
-                      {props?.valueRender?.map?.((value, index) => {
-                        return (
-                          <p style={{ paddingRight: 5 }} key={index}>
-                            {dataState[arrayIndex][value]}
-                          </p>
-                        );
-                      })}
+                      <div>{textRight}</div>
+                      <div>
+                        {props?.renderValueExtra?.(dataState[arrayIndex])}
+                      </div>
                     </div>
                   </Select.Option>
                 );
@@ -129,11 +151,18 @@ export const AsurRaaSelectSearchBaseApi = <T extends { id: number }>(
             </Fragment>
           )}
         </Select>
-        {props.refreshButtonProps === undefined ? null : (
-          <div {...props.refreshButtonProps}>
+        {props.showTriggerRefresh === false ||
+        props.showTriggerRefresh ? null : (
+          <div
+            onClick={() => {
+              refreshFetcher();
+              message.loading(t("loading"));
+            }}
+          >
             <RefreshListIcon style={{ cursor: "pointer" }} />
           </div>
         )}
+
         {props.addButtonProps === undefined ? null : (
           <div {...props.addButtonProps}>
             <AddListIcon style={{ cursor: "pointer" }} />

@@ -15,8 +15,12 @@
     "react": "17.0.2"
   },
   "scripts": {
+    "prebuild": "rimraf dist",
     "dev": "tsc -w",
-    "build": "tsc"
+    "build": "tsc --build tsconfig.json",
+    "deps": "yarn upgrade-interactive --latest",
+    "prepublish": "yarn build",
+    "prettier": "prettier -c --write \"**/*\""
   },
   "files": [
     "dist"
