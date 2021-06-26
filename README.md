@@ -51,6 +51,6 @@ npm install @asurraa/sura-ui
 | [input-phone](https://github.com/asurraa/sura-ui/tree/master/packages/input-phone) |![npm package](https://img.shields.io/npm/v/@asurraa/sura-ui-input-phone.svg?style=flat-square?style=flat-square)|Input Phone with Mask|
 
 
-### LICENSE  @**AsurRaa**
+### AsurRaa
 
-input-money
+
