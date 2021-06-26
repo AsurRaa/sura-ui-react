@@ -18,6 +18,10 @@
   version "0.0.0"
   uid ""
 
+"@asurraa/sura-ui-text@link: ../packages/text":
+  version "0.0.0"
+  uid ""
+
 "@asurraa/sura-ui-upload@link: ../packages/upload":
   version "0.0.0"
   uid ""

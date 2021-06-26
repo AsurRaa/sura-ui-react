@@ -17,6 +17,7 @@
     "@asurraa/sura-ui-upload": "link: ../packages/upload",
     "@asurraa/sura-ui-modal-payment": "link: ../packages/modal-payment",
     "@asurraa/sura-ui-rich-text-editor": "link: ../packages/rich-text-editor",
+    "@asurraa/sura-ui-text": "link: ../packages/text",
     "@craco/craco": "^6.1.1",
     "antd": "link: ../",
     "react": "link: ../",
