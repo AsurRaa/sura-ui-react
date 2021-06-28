@@ -1,6 +1,6 @@
 {
   "name": "@asurraa/sura-ui-sale-card",
-  "version": "1.0.6",
+  "version": "1.0.7",
   "description": "sale-card",
   "author": "@asurraa",
   "license": "MIT",
@@ -14,9 +14,6 @@
     "deps": "yarn upgrade-interactive --latest",
     "prepublish": "yarn build",
     "prettier": "prettier -c --write \"**/*\""
-  },
-  "dependencies": {
-    "@asurraa/sura-ui-image-viewer": "1.0.1"
   },
   "files": [
     "dist"
