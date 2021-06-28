@@ -44,10 +44,10 @@
     lodash "^4.17.21"
     resize-observer-polyfill "^1.5.0"
 
-"@asurraa/sura-ui-image-viewer@1.0.1":
-  version "1.0.1"
-  resolved "https://registry.yarnpkg.com/@asurraa/sura-ui-image-viewer/-/sura-ui-image-viewer-1.0.1.tgz#f727fb8b159974705e57231e414a8a778fab953f"
-  integrity sha512-PohSD6irR3LqnB5BSpbLeRSTtSNfDmmIVZ3oHgl7Fd08t9VmesplRpTZdWPvfnGuNznaNU982WwwLIoKUpvt3A==
+"@asurraa/sura-ui-image-viewer@latest":
+  version "1.0.2"
+  resolved "https://registry.yarnpkg.com/@asurraa/sura-ui-image-viewer/-/sura-ui-image-viewer-1.0.2.tgz#e760a748fe04fe55b1629f1c8ca1ce16fdbf13a9"
+  integrity sha512-Rxeu+CvDxeQKAakmhmHp78qsr4oaOncEmfj6FnMYtxXYPXibO80YxaQ3HsLwGeYQcd1Z4u3iK9LHJfvBSDgDPw==
 
 "@babel/code-frame@7.10.4":
   version "7.10.4"
