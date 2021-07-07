@@ -1,4 +1,5 @@
 const { TsconfigPathsPlugin } = require("tsconfig-paths-webpack-plugin");
+
 module.exports = {
   stories: [
     "../packages/**/**/*.stories.mdx",
@@ -13,7 +14,6 @@ module.exports = {
     [].push.apply(config.resolve.plugins, [
       new TsconfigPathsPlugin({ extensions: config.resolve.extensions }),
     ]);
-
     return config;
   },
 };
