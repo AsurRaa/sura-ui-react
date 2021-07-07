@@ -8,9 +8,29 @@
 yarn add @asurraa/sura-ui-table
 ```
 
-## Example
+### Installation
 
-```ts
+1. Wrap Provider
+
+```tsx
+// app.tsx
+import react from "react";
+import { AsurRaaTableProvider } from "@asurraa/sura-ui/table";
+
+const App = () => {
+  return (
+    <div>
+      <AsurRaaTableProvider>
+        <Page />
+      </AsurRaaTableProvider>
+    </div>
+  );
+};
+```
+
+2. Table Usages
+
+```tsx
 import { Tag } from "antd";
 import React from "react";
 import AsurRaaTable, {
@@ -23,7 +43,6 @@ import {
 
 const ServicesPage = () => {
   const { data, isError, isLoading } = useGetAllProduct();
-  //console.log("isError", isError);
   const column: Array<AsurRaaColumnsInterface> = [
     {
       title: "Product Name",
