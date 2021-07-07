@@ -1,5 +1,6 @@
 import { AsurRaaColumnsInterface } from "../interface";
 
+// @ts-ignore
 const getTextWidth = (text: string, font = "14px -apple-system") => {
   const canvas = document.createElement("canvas");
   const context = canvas.getContext("2d");

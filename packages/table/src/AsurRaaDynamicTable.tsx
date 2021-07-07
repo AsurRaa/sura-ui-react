@@ -3,8 +3,7 @@ import { calculateColumnsWidthHelperFun } from "./helper/DynamicColumnsHelper";
 import { AsurRaaTableProps } from "./AsurRaaTable";
 import React from "react";
 import { AsurRaaColumnsProps, AsurRaaTable } from "./AsurRaaTable";
-export interface AsurRaaDynamicTableInterface
-  extends AsurRaaTableProps<any, any> {
+export interface AsurRaaDynamicTableInterface extends AsurRaaTableProps<any> {
   isDynamicColumnWidth?: boolean;
   rowKey?: string;
   tableHeight?: number;

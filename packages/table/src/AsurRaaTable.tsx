@@ -66,7 +66,7 @@ export interface refreshButtonProps extends ButtonProps {
   animate?: boolean;
 }
 
-export interface AsurRaaTableProps<T, K> {
+export interface AsurRaaTableProps<T> {
   antdTableProps?: TableProps<T>;
   createButton?: ButtonProps | undefined;
   refreshButton?: refreshButtonProps | undefined;
@@ -101,8 +101,8 @@ export interface AsurRaaTableProps<T, K> {
 }
 
 // * main
-export const AsurRaaTable = <T extends unknown, K extends unknown>(
-  props: AsurRaaTableProps<T, K>
+export const AsurRaaTable = <T extends unknown>(
+  props: AsurRaaTableProps<T>
 ): ReactElement | null => {
   const global = useGetConfigAsurRaaTableApi();
   const ability = global?.caslAppAbility;
@@ -254,7 +254,7 @@ export const AsurRaaTable = <T extends unknown, K extends unknown>(
     align: "center",
     width: "20px",
     ellipsis: true,
-    render: (value, prop, index) => {
+    render: (__, _, index) => {
       const calculatePage = (index: number) => {
         if (props.pageChange === 1 || props.pageChange === undefined) {
           return index + 1;
