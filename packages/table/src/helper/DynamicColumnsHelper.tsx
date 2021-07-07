@@ -1,4 +1,4 @@
-import { AsurRaaColumnsInterface } from "../interface";
+import { AsurRaaColumnsInterface } from "src";
 
 // @ts-ignore
 const getTextWidth = (text: string, font = "14px -apple-system") => {

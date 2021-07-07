@@ -38,7 +38,6 @@ import { useTranslation } from "react-i18next";
 import styled from "styled-components";
 import { v4 as uuid } from "uuid";
 import { useGetConfigAsurRaaTableApi } from "./AsurRaaTableProvider";
-import { AsurRaaTableComponentViewModeENUM } from "./interface";
 
 /**
  * @author lyhourchhen
@@ -62,10 +61,15 @@ export interface AsurRaaColumnsProps<T = any> extends ColumnProps<T> {
   dataIndexKey?: keyof T;
 }
 
+export interface AsurRaaColumnsInterface<T = any> extends ColumnProps<T> {
+  dataIndex?: string;
+}
+
 export interface refreshButtonProps extends ButtonProps {
   animate?: boolean;
 }
 
+type ViewMode = "COLUMN" | "TABLE" | "CALENDER";
 export interface AsurRaaTableProps<T> {
   antdTableProps?: TableProps<T>;
   createButton?: ButtonProps | undefined;
@@ -75,7 +79,7 @@ export interface AsurRaaTableProps<T> {
   dataAllCSV?: Array<any> | undefined;
   CSVFilename?: string | undefined;
   dataFilterCSV?: Array<any> | undefined;
-  viewDefault?: AsurRaaTableComponentViewModeENUM;
+  viewDefault?: ViewMode;
   renderMoreButtonHeader?: JSX.Element | ReactNode;
   noNeedHeader?: boolean;
   customWidthActionColumn?: number;
@@ -97,7 +101,7 @@ export interface AsurRaaTableProps<T> {
   onSearchClearTrigger?: () => void;
   onChangeViewMode?: (value: any) => void;
   onChangeFilterDataDate?: (value: Array<string>, momentProps: any) => void;
-  onTableViewModeChange?: (value: AsurRaaTableComponentViewModeENUM) => void;
+  onTableViewModeChange?: (value: ViewMode) => void;
 }
 
 // * main
@@ -126,9 +130,7 @@ export const AsurRaaTable = <T extends unknown>(
   const [visibleDropdownState, setVisibleDropdownState] = useState<boolean>(
     false
   );
-  const [viewMode, setViewMode] = useState<AsurRaaTableComponentViewModeENUM>(
-    AsurRaaTableComponentViewModeENUM.TABLE
-  );
+  const [viewMode, setViewMode] = useState<ViewMode>("TABLE");
   const [stateValueForFilter, setStateValueForFilter] = useState<any[]>([
     moment(
       `${moment().subtract(7, "days").format("YYYY-MM-DD")}`,
@@ -146,21 +148,19 @@ export const AsurRaaTable = <T extends unknown>(
   const [autoFocusOnSearch, setAutoFocusOnSearch] = useState<boolean>(false);
 
   useEffect(() => {
-    props?.onChangeViewMode?.(AsurRaaTableComponentViewModeENUM[viewMode]);
+    props?.onChangeViewMode?.(viewMode);
   }, [props, viewMode]);
 
   useEffect(() => {
-    if (props.viewDefault === AsurRaaTableComponentViewModeENUM.COLUMN) {
-      setViewMode(AsurRaaTableComponentViewModeENUM.COLUMN);
+    if (props.viewDefault === "COLUMN") {
+      setViewMode("COLUMN");
+    } else if (props.viewDefault === "CALENDER") {
+      setViewMode("CALENDER");
     } else if (
-      props.viewDefault === AsurRaaTableComponentViewModeENUM.CALENDER
-    ) {
-      setViewMode(AsurRaaTableComponentViewModeENUM.CALENDER);
-    } else if (
-      props.viewDefault === AsurRaaTableComponentViewModeENUM.TABLE ||
+      props.viewDefault === "TABLE" ||
       props.viewDefault === undefined
     ) {
-      setViewMode(AsurRaaTableComponentViewModeENUM.TABLE);
+      setViewMode("TABLE");
     }
   }, [props.viewDefault]);
 
@@ -282,27 +282,16 @@ export const AsurRaaTable = <T extends unknown>(
 
   const ChangeViewMode = (
     <Menu>
-      <Menu.Item
-        onClick={() => setViewMode(AsurRaaTableComponentViewModeENUM.TABLE)}
-        key={uuid()}
-      >
+      <Menu.Item onClick={() => setViewMode("TABLE")} key={uuid()}>
         <TableOutlined /> Table
       </Menu.Item>
       {props.renderOwnViewColumn === undefined ? null : (
-        <Menu.Item
-          onClick={() => setViewMode(AsurRaaTableComponentViewModeENUM.COLUMN)}
-          key={uuid()}
-        >
+        <Menu.Item onClick={() => setViewMode("COLUMN")} key={uuid()}>
           <ColumnWidthOutlined /> Column
         </Menu.Item>
       )}
       {props.renderOwnViewCalender === undefined ? null : (
-        <Menu.Item
-          onClick={() =>
-            setViewMode(AsurRaaTableComponentViewModeENUM.CALENDER)
-          }
-          key={uuid()}
-        >
+        <Menu.Item onClick={() => setViewMode("CALENDER")} key={uuid()}>
           <CalendarOutlined /> Calender
         </Menu.Item>
       )}
@@ -587,9 +576,9 @@ export const AsurRaaTable = <T extends unknown>(
         ability?.can("read", props.abilitySubject ?? ""),
         <Fragment>
           {props.noNeedHeader ? null : <ComponentHeader />}
-          {viewMode === AsurRaaTableComponentViewModeENUM.COLUMN ? (
+          {viewMode === "COLUMN" ? (
             <ViewAsColumn />
-          ) : viewMode === AsurRaaTableComponentViewModeENUM.CALENDER ? (
+          ) : viewMode === "CALENDER" ? (
             <ViewAsCalender />
           ) : (
             <ViewAsTable />

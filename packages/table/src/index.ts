@@ -9,6 +9,7 @@ export type { AsurRaaDynamicTableInterface } from "./AsurRaaDynamicTable";
 export type {
   AsurRaaColumnsProps,
   AsurRaaTableProps,
+  AsurRaaColumnsInterface,
   refreshButtonProps,
 } from "./AsurRaaTable";
 export type { AsurRaaTableContextInterface } from "./AsurRaaTableProvider";
