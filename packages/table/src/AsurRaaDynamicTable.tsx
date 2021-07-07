@@ -1,10 +1,20 @@
-import React from "react";
 import { FC } from "react";
-import { AsurRaaTable } from "./AsurRaaTable";
 import { calculateColumnsWidthHelperFun } from "./helper/DynamicColumnsHelper";
-import { AsurRaaDynamicTableProps } from "./interface";
+import { AsurRaaTableProps } from "./AsurRaaTable";
+import React from "react";
+import { AsurRaaColumnsProps, AsurRaaTable } from "./AsurRaaTable";
+export interface AsurRaaDynamicTableInterface
+  extends AsurRaaTableProps<any, any> {
+  isDynamicColumnWidth?: boolean;
+  rowKey?: string;
+  tableHeight?: number;
+  maxWidthPerCell?: number;
+  dynamicWidthBaseColumn?: keyof AsurRaaColumnsProps;
+}
 
-export const AsurRaaDynamicTable: FC<AsurRaaDynamicTableProps> = (props) => {
+export const AsurRaaDynamicTable: FC<AsurRaaDynamicTableInterface> = (
+  props
+) => {
   const generateDataTable = calculateColumnsWidthHelperFun({
     columns: props.asurRaaColumnProps,
     source: props.data,
@@ -22,14 +32,15 @@ export const AsurRaaDynamicTable: FC<AsurRaaDynamicTableProps> = (props) => {
   return (
     <AsurRaaTable
       noNeedHeader={true}
-      data={generateDataTable.source}
-      asurRaaColumnProps={columnMerge}
       noActionColumn={true}
       antdTableProps={{
         rowKey: props.rowKey,
         scroll: { x: generateDataTable.tableWidth, y: props.tableHeight },
         ...props.antdTableProps,
       }}
+      {...props}
+      data={generateDataTable.source}
+      asurRaaColumnProps={columnMerge}
     />
   );
 };

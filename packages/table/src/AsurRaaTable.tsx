@@ -1,12 +1,7 @@
 /* eslint-disable indent */
-import { Popover } from "antd";
-import moment from "moment";
-import { Fragment, ReactElement, useEffect, useState } from "react";
-import { CSVLink } from "react-csv";
-import styled from "styled-components";
+import React from "react";
 import {
   CalendarOutlined,
-  CloseCircleOutlined,
   CloseOutlined,
   ColumnWidthOutlined,
   DeleteOutlined,
@@ -19,65 +14,159 @@ import {
   PlusCircleOutlined,
   TableOutlined,
 } from "@ant-design/icons";
-import { Button, DatePicker, Dropdown, Menu, Modal, Table } from "antd";
-import Search from "antd/lib/input/Search";
-import { useTranslation } from "react-i18next";
-import { v4 as uuid } from "uuid";
+import {
+  Button,
+  ButtonProps,
+  DatePicker,
+  Dropdown,
+  Menu,
+  MenuItemProps,
+  Modal,
+  ModalFuncProps,
+  Popover,
+  Table,
+  TableProps,
+} from "antd";
 import Checkbox from "antd/lib/checkbox/Checkbox";
-import React from "react";
-import { Flexbox } from "./styles/common.style";
-import { dateAsurRaaFormatOnlyDateNotWithTime } from "./constant";
-import { AsurRaaColumnsProps, AsurRaaTableProps } from "./interface";
+import Search from "antd/lib/input/Search";
+import MenuItem from "antd/lib/menu/MenuItem";
+import { ColumnProps } from "antd/lib/table";
+import moment from "moment";
+import { Fragment, ReactElement, ReactNode, useEffect, useState } from "react";
+import { CSVLink } from "react-csv";
+import { useTranslation } from "react-i18next";
+import styled from "styled-components";
+import { v4 as uuid } from "uuid";
+import { useGetConfigAsurRaaTableApi } from "./AsurRaaTableProvider";
+import { AsurRaaTableComponentViewModeENUM } from "./interface";
 
 /**
- * @author @lyhourchhen
- * @see [@AsurRaa](https://asurraa.com)
+ * @author lyhourchhen
+ * @see [@AsurRaa](https://developer.asurraa.com)
  * @date 2021
  */
+
+const Flexbox = styled.div`
+  display: flex;
+  justify-content: center;
+  align-items: center;
+`;
 
 const PaddingWrapper = styled.div`
   padding-bottom: 20px;
 `;
 
-// * Interface
+export interface AsurRaaColumnsProps<T = any> extends ColumnProps<T> {
+  dataIndex?: string;
+  //? @experiments
+  dataIndexKey?: keyof T;
+}
 
-export enum AsurRaaComponentViewModeENUM {
-  COLUMN,
-  TABLE,
-  CALENDER,
+export interface refreshButtonProps extends ButtonProps {
+  animate?: boolean;
+}
+
+export interface AsurRaaTableProps<T, K> {
+  antdTableProps?: TableProps<T>;
+  createButton?: ButtonProps | undefined;
+  refreshButton?: refreshButtonProps | undefined;
+  asurRaaColumnProps: Array<AsurRaaColumnsProps>;
+  data: Array<T>;
+  dataAllCSV?: Array<any> | undefined;
+  CSVFilename?: string | undefined;
+  dataFilterCSV?: Array<any> | undefined;
+  viewDefault?: AsurRaaTableComponentViewModeENUM;
+  renderMoreButtonHeader?: JSX.Element | ReactNode;
+  noNeedHeader?: boolean;
+  customWidthActionColumn?: number;
+  renderAnotherChildrenOnRightSide?: ReactNode | JSX.Element;
+  noActionColumn?: boolean;
+  detailActionText?: string;
+  isVisibleColumn?: boolean;
+  noViewAs?: boolean;
+  abilitySubject?: Array<string> | string;
+  noNoColumn?: boolean;
+  pageChange?: number;
+  renderMoreActionButton?: (props: T) => ReactElement<typeof MenuItem>;
+  detailActionButton?: (props: T) => MenuItemProps | undefined;
+  deleteActionButton?: (props: T) => ModalFuncProps | undefined;
+  editActionButton?: (props: T) => MenuItemProps | undefined;
+  renderOwnViewColumn?: (props: Array<T>) => JSX.Element | ReactNode;
+  renderOwnViewCalender?: (props: Array<T>) => JSX.Element | ReactNode;
+  onSearchResult?: (searchData: any) => void;
+  onSearchClearTrigger?: () => void;
+  onChangeViewMode?: (value: any) => void;
+  onChangeFilterDataDate?: (value: Array<string>, momentProps: any) => void;
+  onTableViewModeChange?: (value: AsurRaaTableComponentViewModeENUM) => void;
 }
 
 // * main
-const AsurRaaTable = <T extends unknown>(
-  props: AsurRaaTableProps<T>
+export const AsurRaaTable = <T extends unknown, K extends unknown>(
+  props: AsurRaaTableProps<T, K>
 ): ReactElement | null => {
+  const global = useGetConfigAsurRaaTableApi();
+  const ability = global?.caslAppAbility;
+
+  const dateAsurRaaFormatOnlyDateNotWithTime =
+    global?.formateDate ?? "YYYY-MM-DD";
+
+  const isAbilityUndefined = (
+    ability: boolean | undefined,
+    reactValue: ReactNode
+  ) => {
+    if (ability === undefined) {
+      return reactValue;
+    } else {
+      return ability ? reactValue : null;
+    }
+  };
+
   const { t } = useTranslation();
-  const [pageChange, setPageChange] = useState<number | undefined>(1);
   const [dataSource, setDataSource] = useState<any>();
-  const [popOverCSVState, setPopOverCSVState] = useState<boolean>(false);
   const [visibleDropdownState, setVisibleDropdownState] = useState<boolean>(
     false
   );
-  const [viewMode, setViewMode] = useState<AsurRaaComponentViewModeENUM>(
-    AsurRaaComponentViewModeENUM.TABLE
+  const [viewMode, setViewMode] = useState<AsurRaaTableComponentViewModeENUM>(
+    AsurRaaTableComponentViewModeENUM.TABLE
   );
+  const [stateValueForFilter, setStateValueForFilter] = useState<any[]>([
+    moment(
+      `${moment().subtract(7, "days").format("YYYY-MM-DD")}`,
+      dateAsurRaaFormatOnlyDateNotWithTime
+    ),
+    moment(
+      `${moment().format("YYYY-MM-DD")}`,
+      dateAsurRaaFormatOnlyDateNotWithTime
+    ),
+  ]);
+  const [
+    stateOnChangeValueSearch,
+    setStateOnChangeValueSearch,
+  ] = useState<string>();
+  const [autoFocusOnSearch, setAutoFocusOnSearch] = useState<boolean>(false);
 
   useEffect(() => {
-    props?.onChangeViewMode?.(AsurRaaComponentViewModeENUM[viewMode]);
+    props?.onChangeViewMode?.(AsurRaaTableComponentViewModeENUM[viewMode]);
   }, [props, viewMode]);
 
   useEffect(() => {
-    if (props.viewDefault === AsurRaaComponentViewModeENUM.COLUMN) {
-      setViewMode(AsurRaaComponentViewModeENUM.COLUMN);
-    } else if (props.viewDefault === AsurRaaComponentViewModeENUM.CALENDER) {
-      setViewMode(AsurRaaComponentViewModeENUM.CALENDER);
+    if (props.viewDefault === AsurRaaTableComponentViewModeENUM.COLUMN) {
+      setViewMode(AsurRaaTableComponentViewModeENUM.COLUMN);
     } else if (
-      props.viewDefault === AsurRaaComponentViewModeENUM.TABLE ||
+      props.viewDefault === AsurRaaTableComponentViewModeENUM.CALENDER
+    ) {
+      setViewMode(AsurRaaTableComponentViewModeENUM.CALENDER);
+    } else if (
+      props.viewDefault === AsurRaaTableComponentViewModeENUM.TABLE ||
       props.viewDefault === undefined
     ) {
-      setViewMode(AsurRaaComponentViewModeENUM.TABLE);
+      setViewMode(AsurRaaTableComponentViewModeENUM.TABLE);
     }
   }, [props.viewDefault]);
+
+  useEffect(() => {
+    props?.onTableViewModeChange?.(viewMode);
+  }, [props, viewMode]);
 
   useEffect(() => {
     setDataSource(props.data);
@@ -86,55 +175,66 @@ const AsurRaaTable = <T extends unknown>(
   const deleteModal = (properties: T) => {
     Modal.confirm({
       ...props?.deleteActionButton?.(properties),
-      title: "Confirm",
+      title: t("Confirm"),
       icon: <ExclamationCircleOutlined />,
-      okText: "Sure",
-      cancelText: "Dismiss",
+      okText: t("Sure"),
+      cancelText: t("Dismiss"),
     });
   };
 
   const menu = (properties: T) => (
     <Menu>
-      {props.detailActionButton === undefined ? null : (
-        <Menu.Item
-          {...props.detailActionButton?.(properties)}
-          key={uuid()}
-          icon={<EyeOutlined />}
-        >
-          {props.detailActionText === undefined
-            ? t("View Detail")
-            : t(props.detailActionText)}
-        </Menu.Item>
-      )}
-      {props.editActionButton === undefined ? null : (
-        <Menu.Item
-          {...props.editActionButton?.(properties)}
-          key={uuid()}
-          icon={<EditOutlined />}
-        >
-          {t("edit")}
-        </Menu.Item>
-      )}
-      {props.deleteActionButton === undefined ? null : (
-        <Menu.Item
-          onClick={() => deleteModal(properties)}
-          key={uuid()}
-          icon={<DeleteOutlined />}
-        >
-          {t("delete")}
-        </Menu.Item>
-      )}
+      {props.renderMoreActionButton?.(properties)}
+      {props.detailActionButton === undefined
+        ? null
+        : isAbilityUndefined(
+            ability?.can("read", props.abilitySubject ?? ""),
+            <Menu.Item
+              {...props.detailActionButton?.(properties)}
+              key={uuid()}
+              icon={<EyeOutlined />}
+            >
+              {props.detailActionText === undefined
+                ? t("View Detail")
+                : t(props.detailActionText)}
+            </Menu.Item>
+          )}
+      {props.editActionButton === undefined
+        ? null
+        : isAbilityUndefined(
+            ability?.can("update", props.abilitySubject ?? ""),
+            <Menu.Item
+              {...props.editActionButton?.(properties)}
+              key={uuid()}
+              icon={<EditOutlined />}
+            >
+              {t("edit")}
+            </Menu.Item>
+          )}
+
+      {props.deleteActionButton === undefined
+        ? null
+        : isAbilityUndefined(
+            ability?.can("delete", props.abilitySubject ?? ""),
+            <Menu.Item
+              onClick={() => deleteModal(properties)}
+              key={uuid()}
+              icon={<DeleteOutlined />}
+            >
+              {t("delete")}
+            </Menu.Item>
+          )}
     </Menu>
   );
 
   const actionColumnObj: AsurRaaColumnsProps<T> = {
-    title: "Action",
+    title: t("Action"),
     key: "action",
     fixed: "right",
     align: "center",
     width:
       props.customWidthActionColumn === undefined
-        ? 40
+        ? "30px"
         : props.customWidthActionColumn,
     ellipsis: true,
     render: (props) => {
@@ -148,18 +248,18 @@ const AsurRaaTable = <T extends unknown>(
     },
   };
   const NOColumnObj: AsurRaaColumnsProps<T> = {
-    title: "N.O",
+    title: t("N.O"),
     key: "no",
     fixed: "right",
     align: "center",
-    width: 20,
+    width: "20px",
     ellipsis: true,
-    render: (_value, _props, index) => {
+    render: (value, prop, index) => {
       const calculatePage = (index: number) => {
-        if (pageChange === 1 || pageChange === undefined) {
+        if (props.pageChange === 1 || props.pageChange === undefined) {
           return index + 1;
         } else {
-          return (pageChange - 1) * 10 + index + 1;
+          return (props.pageChange - 1) * 10 + index + 1;
         }
       };
       return <p>{calculatePage(index)}</p>;
@@ -172,6 +272,7 @@ const AsurRaaTable = <T extends unknown>(
     actionColumnObj,
   ];
   const columnsNoAction: Array<AsurRaaColumnsProps<T>> = [
+    NOColumnObj,
     ...props.asurRaaColumnProps,
   ];
 
@@ -182,14 +283,14 @@ const AsurRaaTable = <T extends unknown>(
   const ChangeViewMode = (
     <Menu>
       <Menu.Item
-        onClick={() => setViewMode(AsurRaaComponentViewModeENUM.TABLE)}
+        onClick={() => setViewMode(AsurRaaTableComponentViewModeENUM.TABLE)}
         key={uuid()}
       >
         <TableOutlined /> Table
       </Menu.Item>
       {props.renderOwnViewColumn === undefined ? null : (
         <Menu.Item
-          onClick={() => setViewMode(AsurRaaComponentViewModeENUM.COLUMN)}
+          onClick={() => setViewMode(AsurRaaTableComponentViewModeENUM.COLUMN)}
           key={uuid()}
         >
           <ColumnWidthOutlined /> Column
@@ -197,7 +298,9 @@ const AsurRaaTable = <T extends unknown>(
       )}
       {props.renderOwnViewCalender === undefined ? null : (
         <Menu.Item
-          onClick={() => setViewMode(AsurRaaComponentViewModeENUM.CALENDER)}
+          onClick={() =>
+            setViewMode(AsurRaaTableComponentViewModeENUM.CALENDER)
+          }
           key={uuid()}
         >
           <CalendarOutlined /> Calender
@@ -211,9 +314,7 @@ const AsurRaaTable = <T extends unknown>(
       {props.asurRaaColumnProps?.map((column, index) => {
         return (
           <Menu.Item key={index}>
-            <Checkbox onChange={(value) => console.log("log value", value)}>
-              {column.title}
-            </Checkbox>
+            <Checkbox>{column.title}</Checkbox>
           </Menu.Item>
         );
       })}
@@ -232,12 +333,17 @@ const AsurRaaTable = <T extends unknown>(
         >
           <div style={{ display: "flex" }}>
             <div>
-              {props.createButton !== undefined ? (
-                <Button {...props.createButton} style={{ marginRight: 20 }}>
-                  <PlusCircleOutlined />
-                  {t("add")}
-                </Button>
-              ) : null}
+              {isAbilityUndefined(
+                ability?.can("read", props.abilitySubject ?? ""),
+                <Fragment>
+                  {props.createButton !== undefined ? (
+                    <Button {...props.createButton} style={{ marginRight: 20 }}>
+                      <PlusCircleOutlined />
+                      {t("add")}
+                    </Button>
+                  ) : null}
+                </Fragment>
+              )}
               {props.refreshButton !== undefined ? (
                 <Fragment>
                   <Button {...props.refreshButton} style={{ marginRight: 20 }}>
@@ -263,6 +369,8 @@ const AsurRaaTable = <T extends unknown>(
             )}
             {props.onChangeFilterDataDate !== undefined && (
               <DatePicker.RangePicker
+                // @ts-ignore
+                defaultValue={stateValueForFilter}
                 onChange={(value) => {
                   const formatStartDate = moment(value?.[0]).format(
                     dateAsurRaaFormatOnlyDateNotWithTime
@@ -273,8 +381,19 @@ const AsurRaaTable = <T extends unknown>(
                   const formatDate = [formatStartDate, formatEndDate];
 
                   props?.onChangeFilterDataDate?.(formatDate, value);
+
+                  setStateValueForFilter([
+                    moment(
+                      `${formatStartDate}`,
+                      dateAsurRaaFormatOnlyDateNotWithTime
+                    ),
+                    moment(
+                      `${formatEndDate}`,
+                      dateAsurRaaFormatOnlyDateNotWithTime
+                    ),
+                  ]);
                 }}
-                allowClear
+                allowClear={false}
                 style={{ marginRight: 20 }}
               />
             )}
@@ -282,11 +401,13 @@ const AsurRaaTable = <T extends unknown>(
             props.renderOwnViewCalender === undefined ? null : (
               // eslint-disable-next-line indent
               <Fragment>
-                <Dropdown overlay={ChangeViewMode} trigger={["click"]}>
-                  <Button style={{ marginRight: 20 }}>
-                    {t("view as")} <DownOutlined />
-                  </Button>
-                </Dropdown>
+                {props.noViewAs === true ? null : (
+                  <Dropdown overlay={ChangeViewMode} trigger={["click"]}>
+                    <Button style={{ marginRight: 20 }}>
+                      {t("view as")} <DownOutlined />
+                    </Button>
+                  </Dropdown>
+                )}
               </Fragment>
             )}
 
@@ -300,7 +421,11 @@ const AsurRaaTable = <T extends unknown>(
                       {props.dataAllCSV !== undefined ? (
                         <CSVLink
                           data={props?.dataAllCSV}
-                          filename={"all-data.csv"}
+                          filename={
+                            props.CSVFilename
+                              ? `${props.CSVFilename}.csv`
+                              : "all-data.csv"
+                          }
                         >
                           <a>All Data</a>
                         </CSVLink>
@@ -324,22 +449,15 @@ const AsurRaaTable = <T extends unknown>(
                       }}
                     >
                       <div>Export CSV</div>
-                      <div>
-                        <CloseCircleOutlined
-                          onClick={() => setPopOverCSVState(false)}
-                        />
-                      </div>
                     </div>
                   }
                   trigger="click"
-                  visible={popOverCSVState}
-                  onVisibleChange={() => setPopOverCSVState(true)}
                 >
                   <Button style={{ marginRight: 20 }}>{t("export CSV")}</Button>
                 </Popover>
               </div>
             ) : null}
-            {/* Visible Column*/}
+
             {props.isVisibleColumn !== undefined ? (
               <div>
                 <Dropdown
@@ -364,23 +482,37 @@ const AsurRaaTable = <T extends unknown>(
             props.onSearchResult === true ? (
               <Fragment>
                 <Search
-                  placeholder="Search"
+                  defaultValue={stateOnChangeValueSearch}
+                  placeholder={t("Search")}
+                  onBlur={() => {
+                    setAutoFocusOnSearch(false);
+                  }}
+                  autoFocus={autoFocusOnSearch}
                   onChange={(e) => {
                     const searchValue = e.target.value;
+
                     if (searchValue.length === 0) {
-                      props?.onSearchClear?.();
+                      setStateOnChangeValueSearch("");
+                      setAutoFocusOnSearch(true);
+                      props?.onSearchClearTrigger?.();
                     }
                   }}
-                  onSearch={(search) => {
-                    props?.onSearchResult?.(search);
+                  onSearch={(searchValue) => {
+                    setStateOnChangeValueSearch(searchValue);
+                    setAutoFocusOnSearch(true);
+                    props?.onSearchResult?.(searchValue);
                   }}
                   style={{ width: 200 }}
                 />
                 <Fragment>
-                  {props.onSearchClear === undefined ? null : (
+                  {props.onSearchClearTrigger === undefined ? null : (
                     <Button
                       style={{ width: 10, marginLeft: "-2px" }}
-                      {...props?.onSearchClear?.()}
+                      onClick={() => {
+                        setStateOnChangeValueSearch("");
+                        setAutoFocusOnSearch(false);
+                        props?.onSearchClearTrigger?.();
+                      }}
                     >
                       <Flexbox>
                         <CloseOutlined />
@@ -404,9 +536,8 @@ const AsurRaaTable = <T extends unknown>(
           // @ts-ignore
           columns={mergeColumns}
           dataSource={dataSource}
-          scroll={{ x: 1500 }}
+          // scroll={{ x:  }}
           {...props.antdTableProps}
-          bordered={true}
           loading={{
             // @ts-ignore // default={false}
             spinning: props.antdTableProps?.loading ?? false,
@@ -421,7 +552,6 @@ const AsurRaaTable = <T extends unknown>(
               </Flexbox>
             ),
           }}
-          onChange={(pagination) => setPageChange(pagination.current)}
         />
       </Fragment>
     );
@@ -453,16 +583,19 @@ const AsurRaaTable = <T extends unknown>(
 
   return (
     <Fragment>
-      {props.noNeedHeader ? null : <ComponentHeader />}
-      {viewMode === AsurRaaComponentViewModeENUM.COLUMN ? (
-        <ViewAsColumn />
-      ) : viewMode === AsurRaaComponentViewModeENUM.CALENDER ? (
-        <ViewAsCalender />
-      ) : (
-        <ViewAsTable />
+      {isAbilityUndefined(
+        ability?.can("read", props.abilitySubject ?? ""),
+        <Fragment>
+          {props.noNeedHeader ? null : <ComponentHeader />}
+          {viewMode === AsurRaaTableComponentViewModeENUM.COLUMN ? (
+            <ViewAsColumn />
+          ) : viewMode === AsurRaaTableComponentViewModeENUM.CALENDER ? (
+            <ViewAsCalender />
+          ) : (
+            <ViewAsTable />
+          )}
+        </Fragment>
       )}
     </Fragment>
   );
 };
-
-export { AsurRaaTable };
