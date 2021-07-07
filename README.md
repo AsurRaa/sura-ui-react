@@ -8,7 +8,6 @@
 
 <div align="center">
   
-  ![npm package](https://img.shields.io/npm/v/@asurraa/sura-ui.svg?style=flat-square?style=flat-square)
   [![lerna](https://img.shields.io/badge/maintained%20with-lerna-cc00ff.svg)](https://lerna.js.org/)
   [![Storybook](https://cdn.jsdelivr.net/gh/storybookjs/brand@master/badge/badge-storybook.svg)](https://asurraa.github.io/sura-ui/)
   
