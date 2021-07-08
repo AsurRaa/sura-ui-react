@@ -16,7 +16,8 @@
     "noUnusedLocals": true,
     "noUnusedParameters": true,
     "allowSyntheticDefaultImports": true,
-    "isolatedModules": false
+    "isolatedModules": false,
+    "baseUrl": "."
   },
   "exclude": ["playground"]
 }

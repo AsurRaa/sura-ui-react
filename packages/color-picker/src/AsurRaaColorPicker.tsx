@@ -1,4 +1,4 @@
-import React, { FC, useEffect, useState } from "react";
+import { FC, useEffect, useState } from "react";
 import reactCSS from "reactcss";
 import { SketchPicker } from "react-color";
 
