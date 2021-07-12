@@ -1,5 +1,5 @@
 import { Image, ImageProps } from "antd";
-import React, { FC, Fragment, useState } from "react";
+import { FC, Fragment, useState } from "react";
 import { useGetAsurRaaImageViewer } from "./AsurRaaImageViewerProvider";
 
 export type AsurRaaImageViewerProps = {

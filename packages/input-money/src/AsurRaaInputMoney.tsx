@@ -1,5 +1,3 @@
-/* eslint-disable indent */
-import React from "react";
 import { InputNumber, InputNumberProps } from "antd";
 import { FC, Fragment } from "react";
 import styled from "styled-components";

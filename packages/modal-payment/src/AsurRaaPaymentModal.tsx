@@ -8,7 +8,11 @@ import { FC, Fragment, useEffect, useMemo, useState } from "react";
 import { useTranslation } from "react-i18next";
 import { AsurRaaInputMoney } from "@asurraa/sura-ui-input-money";
 import { InputHeader } from "@asurraa/sura-ui-common-styles";
-import { AsurRaaModal, AsurRaaModalProps } from "@asurraa/sura-ui-modal";
+import {
+  AsurRaaModal,
+  AsurRaaModalProps,
+  AsurRaaDraggableModalProvider,
+} from "@asurraa/sura-ui-modal";
 import { AsurRaaRichTextEditor } from "@asurraa/sura-ui-rich-text-editor";
 import { useGetAsurRaaPaymentModal } from "./AsurRaaPaymentModalProvider";
 
@@ -158,7 +162,7 @@ export const AsurRaaPaymentModal: FC<AsurRaaPaymentModalProps> = (props) => {
   );
 
   return (
-    <Fragment>
+    <AsurRaaDraggableModalProvider>
       {ModalEditor}
       <AsurRaaModal
         afterClose={() => {
@@ -264,6 +268,6 @@ export const AsurRaaPaymentModal: FC<AsurRaaPaymentModalProps> = (props) => {
           value={fixNumberFunc(cashBackKHR, 0)}
         />
       </AsurRaaModal>
-    </Fragment>
+    </AsurRaaDraggableModalProvider>
   );
 };
