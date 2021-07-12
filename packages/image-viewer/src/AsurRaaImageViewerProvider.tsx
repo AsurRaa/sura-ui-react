@@ -1,6 +1,4 @@
-import React from "react";
 import { createContext, FC, useContext } from "react";
-
 export interface AsurRaaImageViewerContextInterface {
   imageUrl: string;
   fallbackImage: string;

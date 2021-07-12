@@ -1,20 +1,19 @@
 /* eslint-disable @typescript-eslint/no-non-null-assertion */
-import React from "react";
 import { LoadingOutlined } from "@ant-design/icons";
-import { fixNumberFunc } from "./utils/fix-number";
-import { useDebounceFn } from "ahooks";
-import { Button, Divider, Radio, Typography } from "antd";
-import { FC, Fragment, useEffect, useMemo, useState } from "react";
-import { useTranslation } from "react-i18next";
-import { AsurRaaInputMoney } from "@asurraa/sura-ui-input-money";
 import { InputHeader } from "@asurraa/sura-ui-common-styles";
+import { AsurRaaInputMoney } from "@asurraa/sura-ui-input-money";
 import {
+  AsurRaaDraggableModalProvider,
   AsurRaaModal,
   AsurRaaModalProps,
-  AsurRaaDraggableModalProvider,
 } from "@asurraa/sura-ui-modal";
 import { AsurRaaRichTextEditor } from "@asurraa/sura-ui-rich-text-editor";
+import { useDebounceFn } from "ahooks";
+import { Button, Divider, Radio, Typography } from "antd";
+import React, { FC, Fragment, useEffect, useMemo, useState } from "react";
+import { useTranslation } from "react-i18next";
 import { useGetAsurRaaPaymentModal } from "./AsurRaaPaymentModalProvider";
+import { fixNumberFunc } from "./utils/fix-number";
 
 export type callBackPayEssentialValueType = {
   grandTotalUSD: number;

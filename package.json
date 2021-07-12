@@ -24,7 +24,8 @@
     "build-order": "yarn lerna run build --include-dependencies --stream",
     "dev": "lerna run dev --stream",
     "rm": "rimraf packages/*/dist",
-    "package-publish": "yarn rm && yarn lerna publish from-package"
+    "package-publish": "yarn rm && yarn lerna publish from-package",
+    "wizard": "yarn lerna-wizard"
   },
   "dependencies": {
     "@casl/ability": "^5.2.2",
@@ -56,6 +57,7 @@
     "@types/styled-components": "^5.1.10",
     "babel-loader": "^8.2.2",
     "lerna": "^4.0.0",
+    "lerna-wizard": "^1.1.1",
     "tsconfig-paths-webpack-plugin": "^3.5.1"
   }
 }
