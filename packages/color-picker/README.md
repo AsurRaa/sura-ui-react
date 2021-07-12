@@ -1,11 +1,11 @@
-[![Storybook](https://cdn.jsdelivr.net/gh/storybookjs/brand@master/badge/badge-storybook.svg)](https://asurraa.github.io/sura-ui/)
+[![Storybook](https://cdn.jsdelivr.net/gh/storybookjs/brand@master/badge/badge-storybook.svg)](https://asurraa.github.io/sura-ui/?path=/docs/components-table--primary/)
 
-# @asurraa/sura-ui-utilities
+# @asurraa/sura-ui-color-picker
 
 > Utilities functions!
 
 ```sh
-yarn add @asurraa/sura-ui-utilities
+yarn add @asurraa/sura-ui-color-picker
 ```
 
 ## Example
