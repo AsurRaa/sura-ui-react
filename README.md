@@ -1,3 +1,4 @@
+
 <p align="center">
   <img width="150" src="https://avatars.githubusercontent.com/u/62465909?s=400&u=b543f5c67f4bafb214e9064ac95de21e35daf2d9&v=4">
 </p>
@@ -39,5 +40,12 @@ The combine series of components & utilities are placed here to support our deve
 | [image-viewer](https://github.com/asurraa/sura-ui/tree/master/packages/image-viewer)       | ![npm package](https://img.shields.io/npm/v/@asurraa/sura-ui-image-viewer.svg?style=flat-square?style=flat-square)    | Image viewer coponenent with crop and preview. |
 | [input-money](https://github.com/asurraa/sura-ui/tree/master/packages/image-viewer)        | ![npm package](https://img.shields.io/npm/v/@asurraa/sura-ui-input-money.svg?style=flat-square?style=flat-square)     | Input money as Riel and Dolla                  |
 | [input-phone](https://github.com/asurraa/sura-ui/tree/master/packages/input-phone)         | ![npm package](https://img.shields.io/npm/v/@asurraa/sura-ui-input-phone.svg?style=flat-square?style=flat-square)     | Input Phone with Mask                          |
+[modal-payment](https://github.com/asurraa/sura-ui/tree/master/packages/modal-payment)         | ![npm package](https://img.shields.io/npm/v/@asurraa/sura-ui-modal-payment.svg?style=flat-square?style=flat-square)     | Input Phone with Mask                          |
+[rich-text-editor](https://github.com/asurraa/sura-ui/tree/master/packages/rich-text-editor)         | ![npm package](https://img.shields.io/npm/v/@asurraa/sura-ui-rich-text-editor.svg?style=flat-square?style=flat-square)     | Rich Text Editor.                          |
+[sale-card](https://github.com/asurraa/sura-ui/tree/master/packages/sale-card)         | ![npm package](https://img.shields.io/npm/v/@asurraa/sura-ui-sale-card.svg?style=flat-square?style=flat-square)     | Sale card componenets                         |
+[search-and-clear](https://github.com/asurraa/sura-ui/tree/master/packages/search-and-clear)         | ![npm package](https://img.shields.io/npm/v/@asurraa/sura-ui-search-and-clear.svg?style=flat-square?style=flat-square)     | Search input with clear compoenents                          |
+[select-search](https://github.com/asurraa/sura-ui/tree/master/packages/select-search)         | ![npm package](https://img.shields.io/npm/v/@asurraa/sura-ui-select-search.svg?style=flat-square?style=flat-square)     | Select search with api base.                          |
+[week-day-picker](https://github.com/asurraa/sura-ui/tree/master/packages/week-day-picker)         | ![npm package](https://img.shields.io/npm/v/@asurraa/sura-ui-week-day-picker.svg?style=flat-square?style=flat-square)     | Week Day Picker Componenets                         |
+[text](https://github.com/asurraa/sura-ui/tree/master/packages/text)         | ![npm package](https://img.shields.io/npm/v/@asurraa/sura-ui-text.svg?style=flat-square?style=flat-square)     | Text component with Translation built in.                         |
 
-### AsurRaa
+### @asurraa
