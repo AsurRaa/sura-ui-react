@@ -12,8 +12,8 @@ import type { SuraSocketConfig } from "@asurraa-sura-ui-socket";
 const AppProvider = () => {
   const socketConfig: SuraSocketConfig = {
     token:
-      "admin-starter_t61j417lr97lq73ohhlih2shicgn49hj2dgnalppk11egqn6mcoc499lqaooqop8hqfq5tkpjhpq34ngk4bhgdnbk40b3b836er6",
-    socketRoute: "https://socket.asurraa.com",
+      "xxx",
+    socketRoute: "xxx",
   };
   return (
     <div>
