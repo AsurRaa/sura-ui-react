@@ -1,5 +1,4 @@
 /* eslint-disable indent */
-import React from "react";
 import {
   CalendarOutlined,
   CloseOutlined,
@@ -55,14 +54,14 @@ const PaddingWrapper = styled.div`
   padding-bottom: 20px;
 `;
 
+// @ts-ignore
 export interface AsurRaaColumnsProps<T = any> extends ColumnProps<T> {
-  dataIndex?: string;
-  //? @experiments
-  dataIndexKey?: keyof T;
+  dataIndex?: keyof T;
 }
 
+// @ts-ignore
 export interface AsurRaaColumnsInterface<T = any> extends ColumnProps<T> {
-  dataIndex?: string;
+  dataIndex?: keyof T;
 }
 
 export interface refreshButtonProps extends ButtonProps {

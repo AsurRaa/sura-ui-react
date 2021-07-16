@@ -85,7 +85,7 @@ const Template: Story<AsurRaaTableProps<DotaTeamInterface>> = (args) => {
         data={data}
         asurRaaColumnProps={TableColumn}
         antdTableProps={{ loading: loading }}
-        detailActionButton={(propsData) => ({
+        detailActionButton={() => ({
           onClick: () => {},
         })}
       />
