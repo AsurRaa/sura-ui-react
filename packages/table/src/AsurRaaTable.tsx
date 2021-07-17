@@ -54,14 +54,15 @@ const PaddingWrapper = styled.div`
   padding-bottom: 20px;
 `;
 
-// @ts-ignore
-export interface AsurRaaColumnsProps<T = any> extends ColumnProps<T> {
-  dataIndex?: keyof T;
-}
+type dataIndexManipulator<T> = T extends T ? keyof T : any;
 
 // @ts-ignore
+export interface AsurRaaColumnsProps<T = any> extends ColumnProps<T> {
+  dataIndex?: dataIndexManipulator<T>;
+}
+// @ts-ignore
 export interface AsurRaaColumnsInterface<T = any> extends ColumnProps<T> {
-  dataIndex?: keyof T;
+  dataIndex?: dataIndexManipulator<T>;
 }
 
 export interface refreshButtonProps extends ButtonProps {

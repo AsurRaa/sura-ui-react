@@ -2,31 +2,7 @@
 # yarn lockfile v1
 
 
-"@asurraa/sura-ui-modal-payment@link: ../packages/modal-payment":
-  version "0.0.0"
-  uid ""
-
-"@asurraa/sura-ui-modal@link: ../packages/modal":
-  version "0.0.0"
-  uid ""
-
-"@asurraa/sura-ui-rich-text-editor@link: ../packages/rich-text-editor":
-  version "0.0.0"
-  uid ""
-
 "@asurraa/sura-ui-table@link: ../packages/table":
-  version "0.0.0"
-  uid ""
-
-"@asurraa/sura-ui-text@link: ../packages/text":
-  version "0.0.0"
-  uid ""
-
-"@asurraa/sura-ui-upload@link: ../packages/upload":
-  version "0.0.0"
-  uid ""
-
-"@asurraa/sura-ui-utilities@link: ../packages/utilities":
   version "0.0.0"
   uid ""
 
