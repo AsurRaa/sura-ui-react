@@ -1,0 +1,25 @@
+{
+  "name": "@asurraa/sura-ui-fetcher",
+  "version": "1.0.0",
+  "description": "crud fetch wrapper",
+  "author": "@asurraa",
+  "license": "MIT",
+  "main": "dist/index.js",
+  "module": "dist/index.modern.js",
+  "source": "src/index.tsx",
+  "scripts": {
+    "dev": "tsc -w",
+    "prebuild": "rimraf dist",
+    "build": "tsc --build tsconfig.json",
+    "deps": "yarn upgrade-interactive --latest",
+    "prepublish": "yarn build",
+    "prettier": "prettier -c --write \"**/*\""
+  },
+  "files": [
+    "dist"
+  ],
+  "gitHead": "5d2a1ab3c7d795000fcd0f92471edee47cf1b497",
+  "devDependencies": {
+    "react-query": "^3.19.0"
+  }
+}
