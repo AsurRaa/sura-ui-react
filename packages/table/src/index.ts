@@ -1,3 +1,4 @@
+// * Enable Tree Sharking
 export { AsurRaaDynamicTable } from "./AsurRaaDynamicTable";
 export { AsurRaaTable } from "./AsurRaaTable";
 export {
@@ -12,4 +13,7 @@ export type {
   AsurRaaColumnsInterface,
   refreshButtonProps,
 } from "./AsurRaaTable";
-export type { AsurRaaTableContextInterface } from "./AsurRaaTableProvider";
+export type {
+  AsurRaaTableContextInterface,
+  OverallTitleConfig,
+} from "./AsurRaaTableProvider";

@@ -108,11 +108,13 @@ export interface AsurRaaTableProps<T> {
 export const AsurRaaTable = <T extends unknown>(
   props: AsurRaaTableProps<T>
 ): ReactElement | null => {
-  const global = useGetConfigAsurRaaTableApi();
-  const ability = global?.caslAppAbility;
+  const context = useGetConfigAsurRaaTableApi();
+  const titleConfig = context?.overallTitleConfig;
+
+  const ability = context?.caslAppAbility;
 
   const dateAsurRaaFormatOnlyDateNotWithTime =
-    global?.formateDate ?? "YYYY-MM-DD";
+    context?.formateDate ?? "YYYY-MM-DD";
 
   const isAbilityUndefined = (
     ability: boolean | undefined,
@@ -208,7 +210,7 @@ export const AsurRaaTable = <T extends unknown>(
               key={uuid()}
               icon={<EditOutlined />}
             >
-              {t("edit")}
+              {t(titleConfig?.editButton ?? "edit")}
             </Menu.Item>
           )}
 
@@ -221,7 +223,7 @@ export const AsurRaaTable = <T extends unknown>(
               key={uuid()}
               icon={<DeleteOutlined />}
             >
-              {t("delete")}
+              {t(titleConfig?.deleteButton ?? "delete")}
             </Menu.Item>
           )}
     </Menu>
@@ -280,6 +282,13 @@ export const AsurRaaTable = <T extends unknown>(
     ? columnsNoAction
     : columnsWithAction;
 
+  const mergeColumnsWithKey = mergeColumns.map((data, index) => {
+    return {
+      ...data,
+      key: index,
+    };
+  });
+
   const ChangeViewMode = (
     <Menu>
       <Menu.Item onClick={() => setViewMode("TABLE")} key={uuid()}>
@@ -328,7 +337,7 @@ export const AsurRaaTable = <T extends unknown>(
                   {props.createButton !== undefined ? (
                     <Button {...props.createButton} style={{ marginRight: 20 }}>
                       <PlusCircleOutlined />
-                      {t("add")}
+                      {t(titleConfig?.createButton ?? "add")}
                     </Button>
                   ) : null}
                 </Fragment>
@@ -339,7 +348,7 @@ export const AsurRaaTable = <T extends unknown>(
                     <Loading3QuartersOutlined
                       spin={props.refreshButton.animate}
                     />
-                    {t("refresh")}
+                    {t(titleConfig?.refreshButton ?? "refresh")}
                   </Button>
                 </Fragment>
               ) : null}
@@ -523,7 +532,7 @@ export const AsurRaaTable = <T extends unknown>(
       <Fragment>
         <Table
           // @ts-ignore
-          columns={mergeColumns}
+          columns={mergeColumnsWithKey}
           dataSource={dataSource}
           // scroll={{ x:  }}
           {...props.antdTableProps}

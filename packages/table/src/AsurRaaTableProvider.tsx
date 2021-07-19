@@ -1,11 +1,17 @@
-import React from "react";
 import { createContext, FC, Fragment, ReactNode, useContext } from "react";
-
 export interface AsurRaaTableContextInterface {
   children: ReactNode;
   caslAppAbility?: any;
   formateDate: string;
+  overallTitleConfig?: {
+    createButton: string;
+    refreshButton: string;
+    editButton: string;
+    deleteButton: string;
+  };
 }
+
+export type OverallTitleConfig = AsurRaaTableContextInterface["overallTitleConfig"];
 
 const AsurRaaTableContext = createContext<
   AsurRaaTableContextInterface | undefined
@@ -19,6 +25,7 @@ const AsurRaaTableProvider: FC<AsurRaaTableContextInterface> = (props) => {
           caslAppAbility: props.caslAppAbility,
           children: props.children,
           formateDate: props.formateDate,
+          overallTitleConfig: props.overallTitleConfig,
         }}
       >
         {props.children}
