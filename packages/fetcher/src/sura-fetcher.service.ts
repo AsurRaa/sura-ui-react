@@ -13,7 +13,7 @@ import type {
   TheUseQueryInstance,
 } from "./types";
 
-export class HttpServiceWrapperFactory<T> {
+export class HttpServiceWrapperFactory<D, R, P> {
   private path: HttpPath;
   private getAllUrl: string;
   private theAxiosInstance: AxiosInstance;
@@ -47,9 +47,11 @@ export class HttpServiceWrapperFactory<T> {
       isLoading,
       refetch,
       ...rest
-    } = this.useQueryInstance<GetAllResponseInterface<T>, any>(this.getAllUrl);
+    } = this.useQueryInstance<GetAllResponseInterface<R, P>, any>(
+      this.getAllUrl
+    );
     const meta = response?.meta;
-    const data: Array<T> | [] = response?.data ?? [];
+    const data: Array<R> | [] = response?.data ?? [];
 
     return {
       meta,
@@ -69,10 +71,10 @@ export class HttpServiceWrapperFactory<T> {
       isLoading,
       refetch,
       ...rest
-    } = this.useQueryInstance<GetOneResponseInterface<T>, any>(
+    } = this.useQueryInstance<GetOneResponseInterface<R>, any>(
       `${this.path.GET_ONE}/${id}`
     );
-    const data: T | undefined = response?.data;
+    const data: R | undefined = response?.data;
 
     return {
       data,
@@ -84,11 +86,11 @@ export class HttpServiceWrapperFactory<T> {
     };
   };
 
-  updateOne = async <T>({
+  updateOne = async <D>({
     data,
     currentPage,
     id,
-  }: UpdateInterface<T>): Promise<HttpResponse<T>> => {
+  }: UpdateInterface<D>): Promise<HttpResponse<D>> => {
     try {
       const res = await this.theAxiosInstance.patch(
         `${this.path.UPDATE}/${id}`,
@@ -104,10 +106,10 @@ export class HttpServiceWrapperFactory<T> {
     }
   };
 
-  createOne = async <T>({
+  createOne = async <D>({
     data,
     currentPage,
-  }: CreateInterface<T>): Promise<HttpResponse<T>> => {
+  }: CreateInterface<D>): Promise<HttpResponse<D>> => {
     try {
       if (!this.path.CREATE) {
         throw "Path not provided";
@@ -126,7 +128,7 @@ export class HttpServiceWrapperFactory<T> {
   deleteOne = async ({
     id,
     currentPage,
-  }: DeleteInterface): Promise<HttpResponse<T>> => {
+  }: DeleteInterface): Promise<HttpResponse<D>> => {
     try {
       const res = await this.theAxiosInstance.delete(
         `${this.path.DELETE}/${id}`

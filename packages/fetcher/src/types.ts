@@ -32,9 +32,9 @@ export interface DeleteInterface {
   currentPage: number;
 }
 
-export interface GetAllResponseInterface<T> {
+export interface GetAllResponseInterface<T, P> {
   data: Array<T>;
-  meta: Pagination;
+  meta: P;
 }
 
 export interface GetOneResponseInterface<T> {

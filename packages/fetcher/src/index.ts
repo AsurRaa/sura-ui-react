@@ -1,8 +1,8 @@
 export { useSuraFetcherFactory } from "./hooks";
 export {
+  SuraFetcherContext,
   SuraFetcherProvider,
   useSuraFetcherProvider,
-  SuraFetcherContext,
 } from "./sura-fetcher-provider";
 export type {
   ParamConfig,

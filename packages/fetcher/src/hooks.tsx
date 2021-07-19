@@ -1,5 +1,6 @@
 // *
 // * Hook to use with this Factory (Sura.js)
+// * generic <D> use for DTO type while <R> use for Return Type
 // *
 import type { HttpPath } from "./types";
 import { useSuraFetcherProvider } from "./sura-fetcher-provider";
@@ -18,8 +19,11 @@ const getReplaceByContextValue = (
   return defaultValue;
 };
 
-export const useSuraFetcherFactory = <T,>(path: HttpPath) => {
+export const useSuraFetcherFactory = <D extends unknown, R extends unknown>(
+  path: HttpPath
+) => {
   const context = useSuraFetcherProvider();
+
   const config = context?.["paramConfig"];
   const getFullUrlWithQueryParams: queryParamFunc = ({
     page,
@@ -54,7 +58,7 @@ export const useSuraFetcherFactory = <T,>(path: HttpPath) => {
     return fullUrl;
   };
 
-  return new HttpServiceWrapperFactory<T>(
+  return new HttpServiceWrapperFactory<D, R, any>(
     path,
     context?.axiosInstance!,
     context?.useQueryInstance!,
