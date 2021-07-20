@@ -1,6 +1,6 @@
 /* eslint-disable react-hooks/rules-of-hooks */
 import { AxiosInstance } from "axios";
-import type { HttpPath, HttpResponse, MetaSuraPagination } from "./types";
+import type { HttpPath, HttpResponse } from "./types";
 import { queryParamFunc } from "./hooks";
 import type {
   CreateInterface,
@@ -12,6 +12,12 @@ import type {
   UpdateInterface,
   TheUseQueryInstance,
 } from "./types";
+
+export interface MetaSuraPagination {
+  page?: number;
+  total_page?: number;
+  total_items?: number;
+}
 
 export class HttpServiceWrapperFactory<D, R> {
   private path: HttpPath;

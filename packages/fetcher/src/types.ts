@@ -1,9 +1,4 @@
 import { useQuery } from "react-query";
-export interface MetaSuraPagination {
-  page?: number;
-  total_page?: number;
-  total_items?: number;
-}
 
 export interface GetAllQueryParamInterface {
   page?: number | undefined;
