@@ -1,5 +1,5 @@
 import { useQuery } from "react-query";
-export interface Pagination {
+export interface MetaSuraPagination {
   page?: number;
   total_page?: number;
   total_items?: number;

@@ -1,6 +1,6 @@
 /* eslint-disable react-hooks/rules-of-hooks */
 import { AxiosInstance } from "axios";
-import type { HttpPath, HttpResponse } from "./types";
+import type { HttpPath, HttpResponse, MetaSuraPagination } from "./types";
 import { queryParamFunc } from "./hooks";
 import type {
   CreateInterface,
@@ -13,7 +13,7 @@ import type {
   TheUseQueryInstance,
 } from "./types";
 
-export class HttpServiceWrapperFactory<D, R, P> {
+export class HttpServiceWrapperFactory<D, R> {
   private path: HttpPath;
   private getAllUrl: string;
   private theAxiosInstance: AxiosInstance;
@@ -47,9 +47,10 @@ export class HttpServiceWrapperFactory<D, R, P> {
       isLoading,
       refetch,
       ...rest
-    } = this.useQueryInstance<GetAllResponseInterface<R, P>, any>(
-      this.getAllUrl
-    );
+    } = this.useQueryInstance<
+      GetAllResponseInterface<R, MetaSuraPagination>,
+      any
+    >(this.getAllUrl);
     const meta = response?.meta;
     const data: Array<R> | [] = response?.data ?? [];
 

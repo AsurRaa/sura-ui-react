@@ -58,7 +58,7 @@ export const useSuraFetcherFactory = <D extends unknown, R extends unknown>(
     return fullUrl;
   };
 
-  return new HttpServiceWrapperFactory<D, R, any>(
+  return new HttpServiceWrapperFactory<D, R>(
     path,
     context?.axiosInstance!,
     context?.useQueryInstance!,
