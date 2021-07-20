@@ -51,3 +51,7 @@ export interface HttpResponse<T> {
   error?: any;
   getAllUrl?: string;
 }
+
+export interface GetOneInputInterface {
+  id: string | number;
+}

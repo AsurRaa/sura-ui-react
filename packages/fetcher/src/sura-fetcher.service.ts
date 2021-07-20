@@ -1,6 +1,6 @@
 /* eslint-disable react-hooks/rules-of-hooks */
 import { AxiosInstance } from "axios";
-import type { HttpPath, HttpResponse } from "./types";
+import type { GetOneInputInterface, HttpPath, HttpResponse } from "./types";
 import { queryParamFunc } from "./hooks";
 import type {
   CreateInterface,
@@ -152,7 +152,18 @@ export class HttpServiceWrapperFactory<D, R> {
 
   getAllPromise = async () => {
     try {
-      const res = await this.theAxiosInstance.get(`${this.path.GET_ALL}`);
+      const res = await this.theAxiosInstance.get<R[]>(`${this.path.GET_ALL}`);
+      return { data: res.data };
+    } catch (ex) {
+      return { error: ex };
+    }
+  };
+
+  getOnePromise = async ({ id }: GetOneInputInterface) => {
+    try {
+      const res = await this.theAxiosInstance.get<R>(
+        `${this.path.GET_ONE}/${id}`
+      );
       return { data: res.data };
     } catch (ex) {
       return { error: ex };
