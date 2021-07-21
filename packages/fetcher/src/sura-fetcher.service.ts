@@ -13,11 +13,7 @@ import type {
   TheUseQueryInstance,
 } from "./types";
 
-export interface MetaSuraPagination {
-  page?: number;
-  total_page?: number;
-  total_items?: number;
-}
+export interface MetaSuraPagination {}
 
 export class HttpServiceWrapperFactory<D, R> {
   private path: HttpPath;
